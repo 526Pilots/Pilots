@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.velocity = movement * speed;
+        transform.Translate(Vector3.forward * moveVertical * speed * Time.fixedDeltaTime, Space.World);
+        transform.Translate(Vector3.right * moveHorizontal * speed * Time.fixedDeltaTime, Space.World);
 
     }
 }
