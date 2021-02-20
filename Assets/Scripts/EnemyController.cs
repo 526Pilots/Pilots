@@ -50,11 +50,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetButton("Fire1") && Time.time > nextFire)
-        // {
-        //     nextFire = Time.time + fireRate;
-        //     Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        // }
+        if (Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, rb.position, rb.rotation);
+        }
     }
 
     void FixedUpdate()
