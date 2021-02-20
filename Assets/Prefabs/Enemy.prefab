@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: -6236410746753588575}
   - component: {fileID: 1148908562}
   - component: {fileID: -8892605360677930638}
+  - component: {fileID: 3638161134938968761}
   m_Layer: 0
-  m_Name: enemy
-  m_TagString: Untagged
+  m_Name: Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +82,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -146,14 +148,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5515284333779207346, guid: 80efaaf0be2744efe93f545af532e031, type: 3}
   attackrange: 5
-  movespeed: 10
+  movespeed: 5
   tilt: 4
   boundary:
     xMin: 0
     xMax: 0
     zMin: 0
     zMax: 0
-  shot: {fileID: 4908025865367653003, guid: 6014a5117d5324a26bcb4cfddf6520da, type: 3}
+  shot: {fileID: 6901999341952784064, guid: e84a98b9b7a0b44e0a0df7d0fc8a532a, type: 3}
   shotSpawn: {fileID: 6797231732771875595}
   fireRate: 3
 --- !u!64 &1148908562
@@ -183,3 +185,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumble: 0
+--- !u!136 &3638161134938968761
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057780690790941153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

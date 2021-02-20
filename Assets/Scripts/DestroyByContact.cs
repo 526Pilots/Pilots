@@ -22,7 +22,7 @@ public class DestroyByContact : MonoBehaviour
                 Destroy(gameObject); 
             }     
         }
-        else{
+        else if(other.tag != "EBullet"){
             ScoreScript.scoreValue += 1;
             Destroy(other.gameObject);
             Destroy(gameObject);            
