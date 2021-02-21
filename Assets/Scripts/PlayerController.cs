@@ -43,5 +43,9 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * moveVertical * speed * Time.fixedDeltaTime, Space.World);
         transform.Translate(Vector3.right * moveHorizontal * speed * Time.fixedDeltaTime, Space.World);
 
+        Vector3 mousePo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.LookAt(new Vector3(mousePo.x, 0, mousePo.z));
+        transform.Rotate(90,0,0);
+
     }
 }
