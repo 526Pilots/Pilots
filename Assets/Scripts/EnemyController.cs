@@ -26,7 +26,11 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerTran = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) {
+            return;
+        }
+        playerTran = player.transform;
         move = new Vector3(playerTran.position.x - this.transform.position.x, 0, playerTran.position.z - this.transform.position.z);
         Vector3  V3 =  move.normalized;
         //角度

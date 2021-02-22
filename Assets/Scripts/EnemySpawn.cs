@@ -31,7 +31,7 @@ public class EnemySpawn : MonoBehaviour
         spawnPerfab = enemyList[Random.Range(0, 3)];
         if(timerWave < timeWave && countPerWave != 5) {
             timerOne += Time.deltaTime;
-            if(timerOne > timeOne) {
+            if(timerOne > timeOne && ScoreScript.lives > 0) {
                 
                 Instantiate (spawnPerfab, new Vector3(Random.Range(-24f, 24f), 0, Random.Range(-15f,15f)), spawnPerfab.transform.rotation);
                 countPerWave++;

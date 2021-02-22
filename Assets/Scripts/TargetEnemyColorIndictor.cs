@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetEnemyColorIndictor : MonoBehaviour
 {   
     float times = 5f;
-    public int color = 1; // 1:red, 2:green, 3:yellow
+    public static int color = 1; // 1:red, 2:green, 3:yellow
     // Start is called before the first frame update
     void Start()
     {

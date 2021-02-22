@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class DestroyByContact : MonoBehaviour
 {
-	public float tumble;
+    private Rigidbody rb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     //当其他碰撞器进入当前GameObject的触发器时，销毁该碰撞器对应的游戏对象，同时销毁该GameObject
     void OnTriggerEnter(Collider other)
     {
@@ -22,8 +29,15 @@ public class DestroyByContact : MonoBehaviour
                 Destroy(gameObject); 
             }     
         }
-        else if(other.tag != "EBullet"){
-            ScoreScript.scoreValue += 1;
+        else if(other.tag == "Bullet"){
+            if (TargetEnemyColorIndictor.color == 1 && rb.tag == "EnemyR" ||
+                TargetEnemyColorIndictor.color == 2 && rb.tag == "EnemyG" ||
+                TargetEnemyColorIndictor.color == 3 && rb.tag == "EnemyY") {
+                ScoreScript.scoreValue += 1;
+            } else {
+                ScoreScript.scoreValue -= 1;
+            }
+            
             Destroy(other.gameObject);
             Destroy(gameObject);            
         }  
