@@ -11,6 +11,7 @@ TagManager:
   - EnemyR
   - EnemyG
   - EnemyY
+  - TargetEnemyColorIndictor
   layers:
   - Default
   - TransparentFX
