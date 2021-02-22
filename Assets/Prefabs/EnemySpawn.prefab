@@ -43,5 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6a00597452e4017a8f07611fa98572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPerfab: {fileID: 7057780690790941153, guid: ed1040a3d200446898442a072ae3b02b,
-    type: 3}
+  enemyList:
+  - {fileID: 7521133127851454384, guid: ad3890e93f6cc4c75907c853194f3047, type: 3}
+  - {fileID: 1687607154879872320, guid: 2f8bf0607948e4351b2c39baca365d5d, type: 3}
+  - {fileID: 9125582526411307264, guid: 3d9beb252f44c4909a956faf84929203, type: 3}
+  enemy1: {fileID: 7521133127851454384, guid: ad3890e93f6cc4c75907c853194f3047, type: 3}
+  enemy2: {fileID: 1687607154879872320, guid: 2f8bf0607948e4351b2c39baca365d5d, type: 3}
+  enemy3: {fileID: 9125582526411307264, guid: 3d9beb252f44c4909a956faf84929203, type: 3}

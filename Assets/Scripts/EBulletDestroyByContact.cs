@@ -17,7 +17,7 @@ public class EBulletDestroyByContact : MonoBehaviour
                 Destroy(gameObject); 
             }     
         }
-        else if(other.tag != "Enemy"){
+        else if(other.tag != "EnemyR" && other.tag != "EnemyG" && other.tag != "EnemyY"){
             Destroy(other.gameObject);
             Destroy(gameObject);            
         }  

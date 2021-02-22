@@ -9,20 +9,30 @@ public class EnemySpawn : MonoBehaviour
     private float timerWave = 0f;
     private float timeWave = 10.0f;
     private int countPerWave = 0;
-    public GameObject spawnPerfab;
+    public GameObject[] enemyList;
+    private GameObject spawnPerfab;
+    // public GameObject enemy1;
+    // public GameObject enemy2;
+    // public GameObject enemy3;
     // Start is called before the first frame update
     void Start()
     {
-        
+        // enemyList = new GameObject[3];
+        // enemyList[0] = enemy1;
+        // enemyList[1] = enemy2;
+        // enemyList[2] = enemy3;
     }
 
     // Update is called once per frame
     void Update()
     {
         timerWave += Time.deltaTime;
+        //int index = Random.Range(0, 3);
+        spawnPerfab = enemyList[Random.Range(0, 3)];
         if(timerWave < timeWave && countPerWave != 5) {
             timerOne += Time.deltaTime;
             if(timerOne > timeOne) {
+                
                 Instantiate (spawnPerfab, new Vector3(Random.Range(-24f, 24f), 0, Random.Range(-15f,15f)), spawnPerfab.transform.rotation);
                 countPerWave++;
                 timerOne -= timeOne;

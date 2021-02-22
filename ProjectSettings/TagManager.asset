@@ -8,6 +8,9 @@ TagManager:
   - Bullet
   - EBullet
   - Enemy
+  - EnemyR
+  - EnemyG
+  - EnemyY
   layers:
   - Default
   - TransparentFX
