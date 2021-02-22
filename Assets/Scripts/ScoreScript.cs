@@ -12,8 +12,18 @@ public class ScoreScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        score.text = "Score: " + scoreValue + "  Lives: " + lives;
+    {   
+        GameObject TargetEnemyColorIndictor = GameObject.FindWithTag("TargetEnemyColorIndictor");
+        int color = TargetEnemyColorIndictor.GetComponent<TargetEnemyColorIndictor>().color;
+        string colorText = "Undefined";
+        if (color == 1) {
+            colorText = "Red";
+        } else if (color == 2) {
+            colorText = "Green";
+        } else if (color == 3) {
+            colorText = "Yellow";
+        }
+        score.text = "Score: " + scoreValue + "  Lives: " + lives +" Color: " +colorText;
     }
 }
 
