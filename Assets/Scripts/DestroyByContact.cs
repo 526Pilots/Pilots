@@ -34,7 +34,7 @@ public class DestroyByContact : MonoBehaviour
                 TargetEnemyColorIndictor.color == 2 && rb.tag == "EnemyG" ||
                 TargetEnemyColorIndictor.color == 3 && rb.tag == "EnemyY") {
                 ScoreScript.scoreValue += 1;
-            } else {
+            } else if (ScoreScript.scoreValue > 0) {
                 ScoreScript.scoreValue -= 1;
             }
             
