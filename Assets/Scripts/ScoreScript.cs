@@ -23,7 +23,7 @@ public class ScoreScript : MonoBehaviour
         } else if (color == 3) {
             colorText = "Yellow";
         }
-        score.text = "Score: " + scoreValue + "  Lives: " + lives +" Color: " +colorText;
+        score.text = "Score: " + scoreValue + "  Lives: " + lives +"  Target Color: " +colorText;
     }
 }
 
