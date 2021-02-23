@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyByContact : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class DestroyByContact : MonoBehaviour
             ScoreScript.lives -= 1;
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
-                Destroy(gameObject);                  
+                Destroy(gameObject); 
+                ScoreScript.lives = 3;
+                ScoreScript.scoreValue = 0;
+                SceneManager.LoadScene(1);                 
             }
             else{
                 Destroy(gameObject); 
@@ -25,7 +29,7 @@ public class DestroyByContact : MonoBehaviour
         else{
             ScoreScript.scoreValue += 1;
             Destroy(other.gameObject);
-            Destroy(gameObject);            
+            Destroy(gameObject); 
         }  
     }
 }
