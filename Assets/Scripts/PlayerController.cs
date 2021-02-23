@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,6 +46,16 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.LookAt(new Vector3(mousePo.x, 0, mousePo.z));
         transform.Rotate(90,0,0);
+		
+		 Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+		        rb.velocity = movement * speed;
+		
+		        rb.position = new Vector3
+		        (
+		        Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+		        0.0f,
+		        Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
+		        );
 
     }
 }
