@@ -58,4 +58,13 @@ public class PlayerController : MonoBehaviour
 		        );
 
     }
+	
+	void OnTriggerEnter(Collider other)
+	{
+	if (other.tag == "Buff") {
+		fireRate = 0.2f;
+		Destroy(other.gameObject);
+		
+	}
+	}
 }
