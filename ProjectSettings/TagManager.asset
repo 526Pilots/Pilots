@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Score
-  - Bullet
-  - EBullet
-  - Enemy
-  - EnemyR
-  - EnemyG
-  - EnemyY
-  - TargetEnemyColorIndictor
-  - Boundary
-  - Buff
-  - Boss
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -51,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: background
-    uniqueID: 497877147
-    locked: 0
-  - name: player
-    uniqueID: 1713302065
     locked: 0

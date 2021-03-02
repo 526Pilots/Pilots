@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -92,7 +93,8 @@ public class BossController : MonoBehaviour
             reduceHealth(bulletDamage);
         }
         if (health <= 0) {
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            SwitchToNextScene();
         }
 	}
 
@@ -119,6 +121,11 @@ public class BossController : MonoBehaviour
             }
             nextFire = Time.time + fireRate;
         }
+    }
+
+    void SwitchToNextScene ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void FixedUpdate()
