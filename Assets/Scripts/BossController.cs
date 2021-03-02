@@ -9,11 +9,13 @@ public class BossController : MonoBehaviour
     private Transform playerTran;
     public float attackrange;
     public float movespeed;
+    public static int bulletDamage = 5;
     //private float CreatTime = 15f;
 
     public float tilt;
     public Boundary boundary;
     private Rigidbody rb;
+    private SpriteRenderer renderReference;
     private Vector3 move;
 
     public GameObject shot;
@@ -25,11 +27,15 @@ public class BossController : MonoBehaviour
     public int shotNumPerWave;
     private int shotNum;
     private int status; // -1: stop shooting; 1: keep shoting
+    public static int MAX_HEALTH = 100;
+    public int health;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        renderReference = GetComponent<SpriteRenderer>();
+        health = MAX_HEALTH;
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null) {
             return;
@@ -75,9 +81,26 @@ public class BossController : MonoBehaviour
 			}
 			rb.transform.eulerAngles = new Vector3 (90, 0, (y));
 			rb.velocity = V3 * movespeed;
-	    }
-		
+	    } else if(other.tag == "Player"){
+            reduceHealth(bulletDamage);
+            ScoreScript.lives -= 1;
+            if(ScoreScript.lives <= 0){
+                Destroy(other.gameObject);             
+            }
+        } else if(other.tag == "Bullet"){
+            Destroy(other.gameObject); 
+            reduceHealth(bulletDamage);
+        }
+        if (health <= 0) {
+            Destroy(gameObject); 
+        }
 	}
+
+    void reduceHealth(int damage) {
+        health = health - damage;
+        renderReference.color = new Color(1, 1.0f * health / MAX_HEALTH, 1, 1);
+        // renderReference.color = new Color(1, 0.1f, 1, 1);
+    }
 
     // Update is called once per frame
     void Update()
