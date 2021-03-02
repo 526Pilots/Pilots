@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     private float timerWave = 0f;
     private float timeWave = 10.0f;
     private int countPerWave = 0;
-    private float CreatTime = 3f;
+    private float CreatTime = 300000f;
     public GameObject[] enemyList;
     private GameObject spawnPerfab;
     // public GameObject enemy1;
