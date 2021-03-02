@@ -20,10 +20,13 @@ public class EBulletDestroyByContact : MonoBehaviour
 		else if(other.tag == "Boundary") {
 			Destroy(gameObject);
 		}
-        // else if(other.tag != "EnemyR" && other.tag != "EnemyG" && other.tag != "EnemyY"){
-        //     Destroy(other.gameObject);
-        //     Destroy(gameObject);            
-        // }
+		else if(other.tag == "Buff") {
+			
+		}
+        else if(other.tag != "EnemyR" && other.tag != "EnemyG" && other.tag != "EnemyY"){
+            Destroy(other.gameObject);
+            Destroy(gameObject);            
+        }
 		
     }
 }
