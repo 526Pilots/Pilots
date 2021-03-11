@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class BossController : MonoBehaviour
 {
 
@@ -27,7 +29,7 @@ public class BossController : MonoBehaviour
     public int shotNumPerWave;
     private int shotNum;
     private int status; // -1: stop shooting; 1: keep shoting
-    public static int MAX_HEALTH = 100;
+    public static int MAX_HEALTH = 10;
     public int health;
 
     // Start is called before the first frame update
@@ -126,8 +128,14 @@ public class BossController : MonoBehaviour
         }
         if (health <= 0) {
             Destroy(gameObject); 
+            SwitchToNextScene();
         }
 	}
+
+    void SwitchToNextScene ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
     void reduceHealth(int damage) {
         health = health - damage;
