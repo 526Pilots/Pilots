@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-	private float timerOne = 1f;
+    private float timerOne = 1f;
     private float timeOne = 1.0f;
     private float timerWave = 0f;
     private float timeWave = 10.0f;
     private int countPerWave = 0;
+    private float CreatTime = 5f;
     public GameObject[] enemyList;
     private GameObject spawnPerfab;
     // public GameObject enemy1;
@@ -26,21 +27,27 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerWave += Time.deltaTime;
-        //int index = Random.Range(0, 3);
-        spawnPerfab = enemyList[Random.Range(0, 3)];
-        if(timerWave < timeWave && countPerWave != 5) {
-            timerOne += Time.deltaTime;
-            if(timerOne > timeOne && ScoreScript.lives > 0) {
-                
-                Instantiate (spawnPerfab, new Vector3(Random.Range(-24f, 24f), 0, Random.Range(-15f,15f)), spawnPerfab.transform.rotation);
-                countPerWave++;
-                timerOne -= timeOne;
+        CreatTime -= Time.deltaTime;
+        if (CreatTime<=0)    //如果倒计时为0 的时候
+        {  
+            //CreatTime = Random.Range(3, 10);
+            CreatTime = 0f;
+            timerWave += Time.deltaTime;
+            //int index = Random.Range(0, 3);
+            spawnPerfab = enemyList[Random.Range(0, 3)];
+            if(timerWave < timeWave && countPerWave != 5) {
+                timerOne += Time.deltaTime;
+                if(timerOne > timeOne && ScoreScript.lives > 0) {
+                    
+                    Instantiate (spawnPerfab, new Vector3(Random.Range(-24f, 24f), 0, Random.Range(-15f,15f)), spawnPerfab.transform.rotation);
+                    countPerWave++;
+                    timerOne -= timeOne;
+                }
             }
-        }
-        if (timerWave >= timeWave) {
-            timerWave -= timeWave;
-            countPerWave = 0;
+            if (timerWave >= timeWave) {
+                timerWave -= timeWave;
+                countPerWave = 0;
+            }
         }
     }
 }
