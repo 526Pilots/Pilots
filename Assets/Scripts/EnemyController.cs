@@ -84,11 +84,6 @@ public class EnemyController : MonoBehaviour
             Instantiate(shot, rb.position, rb.rotation);
         }
     }
-	
-	
-	
-	
-	
 
     void FixedUpdate()
     {
