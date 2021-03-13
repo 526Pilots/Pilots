@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float tilt;
     public Boundary boundary;
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     public GameObject shot;
     public Transform shotSpawn;
@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private float nextFire;
     private float timerColor = 0f;
     private Color[] randomcolor = new Color[3];
+
+    public int playerColor;
 
     void Update()
     {
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         timerColor -= Time.deltaTime;
         if (timerColor <= 0) {
+            
             rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
             timerColor = 2f;
         }

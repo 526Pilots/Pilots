@@ -15,6 +15,7 @@ TagManager:
   - Boundary
   - Buff
   - Boss
+  - Blood
   layers:
   - Default
   - TransparentFX

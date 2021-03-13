@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using UnityEngine.SceneManagement;
 
@@ -8,10 +9,11 @@ public class BossController : MonoBehaviour
 {
 
 	public GameObject player;
+    public GameObject Blood;
     private Transform playerTran;
     public float attackrange;
     public float movespeed;
-    public static int bulletDamage = 5;
+    public static int bulletDamage = 1;
     //private float CreatTime = 15f;
 
     public float tilt;
@@ -26,20 +28,41 @@ public class BossController : MonoBehaviour
 
     private float nextFire;
 
+    // color change
+    private float timerColor = 0f;
+    private Color[] randomcolor = new Color[3];
+
     public int shotNumPerWave;
     private int shotNum;
     private int status; // -1: stop shooting; 1: keep shoting
     public static int MAX_HEALTH = 10;
     public int health;
 
+    private SpriteRenderer render;
+    private Slider slider;
+
+
     // Start is called before the first frame update
     void Start()
     {
+
+        
         rb = GetComponent<Rigidbody>();
+        randomcolor[0] = Color.yellow;
+        randomcolor[1] = Color.green;
+        randomcolor[2] = Color.green;
+
         renderReference = GetComponent<SpriteRenderer>();
+
         health = MAX_HEALTH;
         player = GameObject.FindGameObjectWithTag("Player");
+        Blood  = GameObject.FindGameObjectWithTag("Blood");
+
+        slider =  Blood.GetComponent<Slider>();
         if (player == null) {
+            return;
+        }
+        if (Blood == null) {
             return;
         }
         playerTran = player.transform;
@@ -94,6 +117,10 @@ public class BossController : MonoBehaviour
                 Destroy(other.gameObject);             
             }
         } else if(other.tag == "Bullet"){
+            if (true)
+            {
+                
+            }
             Destroy(other.gameObject); 
             reduceHealth(bulletDamage);
         }
@@ -109,8 +136,22 @@ public class BossController : MonoBehaviour
     }
 
     void reduceHealth(int damage) {
-        health = health - damage;
-        renderReference.color = new Color(1, 1.0f * health / MAX_HEALTH, 1, 1);
+        
+        if (player.GetComponent<SpriteRenderer>().material.color == rb.GetComponent<SpriteRenderer>().material.color) {
+            health = health - damage;
+        }
+        else
+        {
+            if (health >= 10)
+            {
+                
+            }
+            else
+            {
+                health = health + damage;
+            }
+        }
+        // renderReference.color = new Color(1, 1.0f * health / MAX_HEALTH, 1, 1);
         // renderReference.color = new Color(1, 0.1f, 1, 1);
     }
 
@@ -133,9 +174,19 @@ public class BossController : MonoBehaviour
             }
             nextFire = Time.time + fireRate;
         }
+
+
     }
 
     void FixedUpdate()
     {
+        timerColor -= Time.deltaTime;
+        if (timerColor <= 0) {
+            rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
+            timerColor = 2f;
+        }
+
+            slider.value = 10 - health;
+
     }
 }
