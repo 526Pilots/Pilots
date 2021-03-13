@@ -5,12 +5,20 @@ using UnityEngine;
 public class DestroyByContact : MonoBehaviour
 {
     private Rigidbody rb;
+    //public GameObject player;
+    private Color colorplayer;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
+
+    // void FixedUpdate()
+    // {
+    //     colorplayer = player.GetComponent<SpriteRenderer>().sharedMaterial.color;
+    //     print(colorplayer);
+    // }
 
     //当其他碰撞器进入当前GameObject的触发器时，销毁该碰撞器对应的游戏对象，同时销毁该GameObject
     void OnTriggerEnter(Collider other)

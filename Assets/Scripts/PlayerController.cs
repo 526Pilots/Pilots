@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
 
     private float nextFire;
+    private float timerColor = 0f;
+    private Color[] randomcolor = new Color[3];
 
     void Update()
     {
@@ -33,10 +35,19 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        randomcolor[0] = Color.red;
+        randomcolor[1] = Color.green;
+        randomcolor[2] = Color.yellow;
     }
 
     void FixedUpdate()
     {
+        timerColor -= Time.deltaTime;
+        if (timerColor <= 0) {
+            rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
+            timerColor = 2f;
+        }
+        
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
