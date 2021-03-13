@@ -60,10 +60,10 @@ public class BossController : MonoBehaviour
 
         slider =  Blood.GetComponent<Slider>();
         if (player == null) {
-            return;
+            GameOver();
         }
         if (Blood == null) {
-            return;
+            GameOver();
         }
         playerTran = player.transform;
         move = new Vector3(playerTran.position.x - this.transform.position.x, 0, playerTran.position.z - this.transform.position.z);
@@ -93,8 +93,10 @@ public class BossController : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Boundary"){
-			move = new Vector3(playerTran.position.x - this.transform.position.x, 0, playerTran.position.z - this.transform.position.z);
-			Vector3  V3 =  move.normalized;
+            if(playerTran!=null){
+                move = new Vector3(playerTran.position.x - this.transform.position.x, 0, playerTran.position.z - this.transform.position.z);
+                Vector3  V3 =  move.normalized;
+            
 			float y;
 			if ((V3).x >= 0 && (V3).z >= 0) {//左下
 			    y = Vector3.Angle (Vector3.right, V3)-90;
@@ -110,6 +112,7 @@ public class BossController : MonoBehaviour
 			}
 			rb.transform.eulerAngles = new Vector3 (90, 0, (y));
 			rb.velocity = V3 * movespeed;
+            }
 	    } else if(other.tag == "Player"){
             reduceHealth(bulletDamage);
             ScoreScript.lives -= 1;
@@ -133,6 +136,12 @@ public class BossController : MonoBehaviour
     void SwitchToNextScene ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    void GameOver(){
+        ScoreScript.lives = 3;
+        ScoreScript.scoreValue = 0;
+        SceneManager.LoadScene("Scenes/GameOver");
     }
 
     void reduceHealth(int damage) {
@@ -173,6 +182,9 @@ public class BossController : MonoBehaviour
                 shotNum++;
             }
             nextFire = Time.time + fireRate;
+        }
+        if(GameObject.FindGameObjectWithTag("Player") == null){
+            GameOver();
         }
 
 

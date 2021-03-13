@@ -54,6 +54,7 @@ public class EnemyController : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Boundary"){
+            if(playerTran!=null){
 			move = new Vector3(playerTran.position.x - this.transform.position.x, 0, playerTran.position.z - this.transform.position.z);
 			Vector3  V3 =  move.normalized;
 			float y;
@@ -72,6 +73,7 @@ public class EnemyController : MonoBehaviour
 			rb.transform.eulerAngles = new Vector3 (90, 0, (y));
 			rb.velocity = V3 * movespeed;
 	    }
+        }
 		
 	}
 
