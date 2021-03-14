@@ -3166,6 +3166,11 @@ PrefabInstance:
       propertyPath: boundary.zMin
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 5515284333779207357, guid: 80efaaf0be2744efe93f545af532e031,
+        type: 3}
+      propertyPath: autoChangeColor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80efaaf0be2744efe93f545af532e031, type: 3}
 --- !u!1 &1041574885
@@ -5176,7 +5181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1734052701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61238c72d1cc943aeb75031df5854c38, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d083bf381356454b8a381927da37d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 581582374}
@@ -5193,7 +5198,7 @@ MonoBehaviour:
   shotSpawn: {fileID: 334307975}
   fireRate: 3
   shotNumPerWave: 5
-  health: 100
+  health: 10
 --- !u!4 &1734052707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8540452177042440162, guid: 2f8bf0607948e4351b2c39baca365d5d,

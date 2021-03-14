@@ -34,7 +34,7 @@ public class EnemySpawn : MonoBehaviour
             CreatTime = 0f;
             timerWave += Time.deltaTime;
             //int index = Random.Range(0, 3);
-            spawnPerfab = enemyList[Random.Range(0, 3)];
+            spawnPerfab = enemyList[Random.Range(0, enemyList.Length)];
             if(timerWave < timeWave && countPerWave != 5) {
                 timerOne += Time.deltaTime;
                 if(timerOne > timeOne && ScoreScript.lives > 0) {

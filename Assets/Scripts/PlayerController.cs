@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private Color[] randomcolor = new Color[3];
 
     public int playerColor;
+    public bool autoChangeColor;
 
     void Update()
     {
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         timerColor -= Time.deltaTime;
-        if (timerColor <= 0) {
+        if (timerColor <= 0 && autoChangeColor) {
             
             rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
             timerColor = 2f;
