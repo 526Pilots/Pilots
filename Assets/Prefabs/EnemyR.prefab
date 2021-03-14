@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bose: {fileID: 7949812681025775232, guid: 97c4fc44ede8642748325c773d110933, type: 3}
+  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894, type: 3}
 --- !u!136 &4318794644589509864
 CapsuleCollider:
   m_ObjectHideFlags: 0

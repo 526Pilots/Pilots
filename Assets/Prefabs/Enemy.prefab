@@ -214,3 +214,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bose: {fileID: 6524238483335395890, guid: 4be7b2c50d13d4051bf9271fc9a7b800, type: 3}
+  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894, type: 3}
