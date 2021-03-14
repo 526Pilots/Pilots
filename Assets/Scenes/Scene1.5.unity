@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 132742399}
   - component: {fileID: 132742398}
   m_Layer: 5
-  m_Name: congratylations
+  m_Name: Congratulations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,8 +487,9 @@ GameObject:
   - component: {fileID: 711519589}
   - component: {fileID: 711519588}
   - component: {fileID: 711519587}
+  - component: {fileID: 711519590}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,9 +559,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 45357287}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 711519590}
+        m_TargetAssemblyTypeName: NextLevel, Assembly-CSharp
+        m_MethodName: TaskOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -608,6 +609,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711519585}
   m_CullTransparentMesh: 1
+--- !u!114 &711519590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711519585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a81590a512f548bca29cb18d5cd7fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1233974717
 GameObject:
   m_ObjectHideFlags: 0
