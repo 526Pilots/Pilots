@@ -38,10 +38,7 @@ public class DestroyByContact : MonoBehaviour
             });
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
-                Destroy(gameObject);   
-                ScoreScript.lives = 3;
-                ScoreScript.scoreValue = 0;
-                SceneManager.LoadScene("Scenes/GameOver");                
+                Destroy(gameObject);                 
             }
             else{
                 Destroy(gameObject); 

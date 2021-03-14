@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreScript : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class ScoreScript : MonoBehaviour
         // }
         // score.text = "Score: " + scoreValue + "  Lives: " + lives +"  Target Color: " +colorText;
         score.text = "Score: " + scoreValue + "  Lives: " + lives;
+        if(lives <= 0){
+            lives = 3;
+            scoreValue = 0;
+            SceneManager.LoadScene("Scenes/GameOver");  
+        }
     }
 }
 

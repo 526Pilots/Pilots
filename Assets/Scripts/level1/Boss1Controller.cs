@@ -117,13 +117,10 @@ public class Boss1Controller : MonoBehaviour
             reduceHealth(bulletDamage);
             ScoreScript.lives -= 1;
             if(ScoreScript.lives <= 0){
-                Destroy(other.gameObject);             
+                Destroy(other.gameObject);       
+                GameOver();
             }
         } else if(other.tag == "Bullet"){
-            if (true)
-            {
-                
-            }
             Destroy(other.gameObject); 
             reduceHealth(bulletDamage);
         }
