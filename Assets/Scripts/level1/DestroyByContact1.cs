@@ -10,6 +10,7 @@ public class DestroyByContact1 : MonoBehaviour
     //public GameObject player;
     private Color colorplayer;
     public GameObject bose;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,10 @@ public class DestroyByContact1 : MonoBehaviour
             });
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
-                Destroy(gameObject);            
+                Destroy(gameObject);   
+                ScoreScript.lives = 3;
+                ScoreScript.scoreValue = 0;
+                SceneManager.LoadScene("Scenes/GameOver");                
             }
             else{
                 Destroy(gameObject); 
@@ -49,7 +53,7 @@ public class DestroyByContact1 : MonoBehaviour
             if (ScoreScript.scoreValue >= 5) {
                 Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
             }
-            
+            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(other.gameObject);
             Destroy(gameObject);            
         }  
