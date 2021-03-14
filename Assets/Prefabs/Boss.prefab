@@ -170,20 +170,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5318975085229444763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61238c72d1cc943aeb75031df5854c38, type: 3}
+  m_Script: {fileID: 11500000, guid: 3777b878c7e6a4cf6b4f9834d02d81c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5515284333779207346, guid: 80efaaf0be2744efe93f545af532e031, type: 3}
-  attackrange: 5
-  movespeed: 7
-  tilt: 4
+  player: {fileID: 0}
+  Blood: {fileID: 0}
+  attackrange: 0
+  movespeed: 0
+  tilt: 0
   boundary:
     xMin: 0
     xMax: 0
     zMin: 0
     zMax: 0
-  shot: {fileID: 6901999341952784064, guid: e84a98b9b7a0b44e0a0df7d0fc8a532a, type: 3}
-  shotSpawn: {fileID: 8536031802351215729}
-  fireRate: 3
-  shotNumPerWave: 5
-  health: 100
+  shot: {fileID: 0}
+  shotSpawn: {fileID: 0}
+  fireRate: 0
+  shotNumPerWave: 0
+  health: 0

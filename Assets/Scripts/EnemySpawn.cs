@@ -9,15 +9,24 @@ public class EnemySpawn : MonoBehaviour
     private float timerWave = 0f;
     private float timeWave = 10.0f;
     private int countPerWave = 0;
-    private float CreatTime = 5f;
+    private float CreatTime = 3f;
     public GameObject[] enemyList;
     private GameObject spawnPerfab;
+    private Vector3[] v = new Vector3[8];
     // public GameObject enemy1;
     // public GameObject enemy2;
     // public GameObject enemy3;
     // Start is called before the first frame update
     void Start()
     {
+        v[0] = new Vector3(-24f, 0f, 24f);
+        v[1] = new Vector3(-24f, 0f, 0f);
+        v[2] = new Vector3(-24f, 0f, -24f);
+        v[3] = new Vector3(0f, 0f, 24f);
+        v[4] = new Vector3(0f, 0f, -24f);
+        v[5] = new Vector3(24f, 0f, 24f);
+        v[6] = new Vector3(24f, 0f, 0f);
+        v[7] = new Vector3(24f, 0f, -24f);
         // enemyList = new GameObject[3];
         // enemyList[0] = enemy1;
         // enemyList[1] = enemy2;
@@ -38,8 +47,7 @@ public class EnemySpawn : MonoBehaviour
             if(timerWave < timeWave && countPerWave != 5) {
                 timerOne += Time.deltaTime;
                 if(timerOne > timeOne && ScoreScript.lives > 0) {
-                    
-                    Instantiate (spawnPerfab, new Vector3(Random.Range(-24f, 24f), 0, Random.Range(-15f,15f)), spawnPerfab.transform.rotation);
+                    Instantiate (spawnPerfab, v[Random.Range(0, 8)], spawnPerfab.transform.rotation);
                     countPerWave++;
                     timerOne -= timeOne;
                 }

@@ -9,6 +9,7 @@ public class DestroyByContact : MonoBehaviour
     private Rigidbody rb;
     //public GameObject player;
     private Color colorplayer;
+    public GameObject bose;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,9 @@ public class DestroyByContact : MonoBehaviour
                 TargetEnemyColorIndictor.color == 2 && rb.tag == "EnemyG" ||
                 TargetEnemyColorIndictor.color == 3 && rb.tag == "EnemyY") {
                 ScoreScript.scoreValue += 1;
+                if (ScoreScript.scoreValue >= 5) {
+                    Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
+                }
             } else if (ScoreScript.scoreValue > 0) {
                 ScoreScript.scoreValue -= 1;
             }
