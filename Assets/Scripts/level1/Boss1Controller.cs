@@ -29,7 +29,7 @@ public class Boss1Controller : MonoBehaviour
     private float nextFire;
 
     // color change
-    private float timerColor = 0f;
+    // private float timerColor = 0f;
     private Color[] randomcolor = new Color[3];
 
     public int shotNumPerWave;
