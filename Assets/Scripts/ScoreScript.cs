@@ -29,8 +29,11 @@ public class ScoreScript : MonoBehaviour
         // score.text = "Score: " + scoreValue + "  Lives: " + lives +"  Target Color: " +colorText;
         
         score.text = "Score: " + scoreValue + "  Lives: " + lives;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 49f4cf3a199927d3a41ed1435d5cf335e5baa0ae
         if(lives <= 0){
             lives = 3;
             scoreValue = 0;

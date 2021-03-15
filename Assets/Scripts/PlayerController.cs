@@ -28,8 +28,11 @@ public class PlayerController : MonoBehaviour
 
     public int playerColor;
     public bool autoChangeColor;
+<<<<<<< HEAD
     public bool isInvincible = false;
 
+=======
+>>>>>>> 49f4cf3a199927d3a41ed1435d5cf335e5baa0ae
 
     void Update()
     {
