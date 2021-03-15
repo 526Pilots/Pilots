@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 6700710602686368688}
   - component: {fileID: 2369449660602666224}
   - component: {fileID: 689658353878325827}
-  - component: {fileID: 938215557813507875}
   - component: {fileID: 4318794644589509864}
+  - component: {fileID: 8278924864652937722}
   m_Layer: 0
   m_Name: EnemyR
   m_TagString: EnemyR
@@ -172,20 +172,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &938215557813507875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521133127851454384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf8b3023ca3940faa35f2176f96cb6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bose: {fileID: 7949812681025775232, guid: 97c4fc44ede8642748325c773d110933, type: 3}
-  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894, type: 3}
 --- !u!136 &4318794644589509864
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -200,3 +186,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8278924864652937722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521133127851454384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74918eb0945884cbcae3bb51e95a4d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bose: {fileID: 7949812681025775232, guid: 97c4fc44ede8642748325c773d110933, type: 3}
+  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894,
+    type: 3}

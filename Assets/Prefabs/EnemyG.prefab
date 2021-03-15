@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2591346277607741760}
   - component: {fileID: 6911339424179805696}
   - component: {fileID: 8546094732815354035}
-  - component: {fileID: 8218732229564532179}
   - component: {fileID: 4964246242295705112}
+  - component: {fileID: 1519552485986222463}
   m_Layer: 0
   m_Name: EnemyG
   m_TagString: EnemyG
@@ -142,20 +142,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &8218732229564532179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687607154879872320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf8b3023ca3940faa35f2176f96cb6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bose: {fileID: 7949812681025775232, guid: 97c4fc44ede8642748325c773d110933, type: 3}
-  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894, type: 3}
 --- !u!136 &4964246242295705112
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -170,6 +156,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1519552485986222463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687607154879872320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74918eb0945884cbcae3bb51e95a4d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bose: {fileID: 7949812681025775232, guid: 97c4fc44ede8642748325c773d110933, type: 3}
+  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894,
+    type: 3}
 --- !u!1 &8957960185998403818
 GameObject:
   m_ObjectHideFlags: 0
