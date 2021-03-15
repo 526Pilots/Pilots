@@ -5551,7 +5551,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyList.Array.data[0]
       value: 
-      objectReference: {fileID: 7057780690790941153, guid: ed1040a3d200446898442a072ae3b02b,
+      objectReference: {fileID: 7057780690790941153, guid: 72d9404fc825449d59900f60b126603c,
         type: 3}
     - target: {fileID: 2314562751944776976, guid: d9b12e2b950804544a673631b877eb18,
         type: 3}

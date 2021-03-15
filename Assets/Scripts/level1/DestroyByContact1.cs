@@ -11,6 +11,7 @@ public class DestroyByContact1 : MonoBehaviour
     private Color colorplayer;
     public GameObject bose;
     public GameObject explosion;
+    private int flag = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,8 @@ public class DestroyByContact1 : MonoBehaviour
         }
         else if(other.tag == "Bullet"){
             ScoreScript.scoreValue += 1;
-            if (ScoreScript.scoreValue >= 5) {
+            if (ScoreScript.scoreValue >= 5 && flag == 0) {
+                flag = 1;
                 Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
             }
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
