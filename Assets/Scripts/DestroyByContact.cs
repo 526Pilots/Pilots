@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class DestroyByContact : MonoBehaviour
 {
     private Rigidbody rb;
     //public GameObject player;
     private Color colorplayer;
+    public GameObject bose;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +33,16 @@ public class DestroyByContact : MonoBehaviour
 		// }
 		if(other.tag == "Player"){
             ScoreScript.lives -= 1;
+            AnalyticsEvent.Custom("lose_heart", new Dictionary<string, object>
+            {
+                { "lose_heart", Time.timeSinceLevelLoad }
+            });
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
-                Destroy(gameObject);                  
+                Destroy(gameObject);   
+                ScoreScript.lives = 3;
+                ScoreScript.scoreValue = 0;
+                SceneManager.LoadScene("Scenes/GameOver");                
             }
             else{
                 Destroy(gameObject); 
@@ -42,10 +53,14 @@ public class DestroyByContact : MonoBehaviour
                 TargetEnemyColorIndictor.color == 2 && rb.tag == "EnemyG" ||
                 TargetEnemyColorIndictor.color == 3 && rb.tag == "EnemyY") {
                 ScoreScript.scoreValue += 1;
+                if (ScoreScript.scoreValue >= 5) {
+                    Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
+                }
             } else if (ScoreScript.scoreValue > 0) {
                 ScoreScript.scoreValue -= 1;
             }
             
+            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(other.gameObject);
             Destroy(gameObject);            
         }  

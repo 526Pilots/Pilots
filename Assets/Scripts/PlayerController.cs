@@ -21,9 +21,15 @@ public class PlayerController : MonoBehaviour
 
     private float nextFire;
     private float timerColor = 0f;
+    private float timeSpentInvincible = 0f;
+    private float m_timer = 0f;
+
     private Color[] randomcolor = new Color[3];
 
     public int playerColor;
+    public bool autoChangeColor;
+    public bool isInvincible = false;
+
 
     void Update()
     {
@@ -32,6 +38,41 @@ public class PlayerController : MonoBehaviour
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         }
+
+        isTnvincible();
+        
+        m_timer += Time.deltaTime;
+            if (m_timer >= 3)
+            {
+                this.GetComponent<MeshCollider>().enabled = true; 
+                this.GetComponent<CapsuleCollider>().enabled = true; 
+                m_timer = 0;
+            }
+
+
+        
+                   
+    }
+
+    void isTnvincible () {
+        if (isInvincible)
+		{
+			//2
+			timeSpentInvincible += Time.deltaTime;
+            this.GetComponent<MeshCollider>().enabled = false; 
+            this.GetComponent<CapsuleCollider>().enabled = false; 
+			//3
+			if (timeSpentInvincible < 3f) {
+				float remainder = timeSpentInvincible % 0.3f;
+				GetComponent<Renderer>().enabled = remainder > 0.15f; 
+			}
+			//4
+			else {
+				GetComponent<Renderer>().enabled = true;
+				isInvincible = false;
+			}
+		}
+        
     }
 
     void Start()
@@ -45,7 +86,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         timerColor -= Time.deltaTime;
-        if (timerColor <= 0) {
+        if (timerColor <= 0 && autoChangeColor) {
             
             rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
             timerColor = 2f;
@@ -75,10 +116,25 @@ public class PlayerController : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other)
 	{
-	if (other.tag == "Buff") {
-		fireRate = 0.2f;
-		Destroy(other.gameObject);
-		
+        if (other.tag == "Buff") {
+            fireRate = 0.2f;
+            Destroy(other.gameObject);
+            
+        } else if (other.tag == "Boundary") {
+            restart();
+           
+
+        }
 	}
-	}
+
+    public void restart() {
+            Vector3 player_position = this.transform.position;
+            player_position.x = 0;
+            player_position.y = 0;
+            player_position.z = 0;
+            this.GetComponent<Transform>().position = player_position;
+            isInvincible = true;
+             timeSpentInvincible = 0f;
+             ScoreScript.lives -= 1;
+    }
 }

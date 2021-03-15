@@ -8,7 +8,7 @@ public class EBulletDestroyByContact : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 		if(other.tag == "Player"){
-            ScoreScript.lives -= 1;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().restart();
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
                 Destroy(gameObject);                  
