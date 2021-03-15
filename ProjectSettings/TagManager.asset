@@ -16,6 +16,10 @@ TagManager:
   - Buff
   - Boss
   - Blood
+  - WordController
+  - ScoreText
+  - ScoreBar
+  - LifeBar
   layers:
   - Default
   - TransparentFX

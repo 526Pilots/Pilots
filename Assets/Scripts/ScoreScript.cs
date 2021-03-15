@@ -9,9 +9,9 @@ public class ScoreScript : MonoBehaviour
 {
     public static int scoreValue = 0;
     public static int lives = 3;
-    public static int MAX_LIVES = 3;
     public Text score;
     // Start is called before the first frame update
+    private Slider slider;
 
     // Update is called once per frame
     void Update()
@@ -41,15 +41,17 @@ public class ScoreScript : MonoBehaviour
             sceneManager.lastSceneName = currentSceneName;
             sceneManager.lastSceneIndex = currentScene.buildIndex;
 
-            AnalyticsEvent.Custom("Game Over at level " + currentSceneName, new Dictionary<string, object>
+            AnalyticsEvent.Custom("Game Over", new Dictionary<string, object>
             {
-                {"elapsed time", Time.timeSinceLevelLoad },
-                {"gained score ", scoreValue},
-                {"number of lost health", 3}
+                {"time for " + currentSceneName, Time.timeSinceLevelLoad },
+                {"score for " + currentSceneName, scoreValue},
+                {"number of lost health for "+currentSceneName, 3}
             });
 
             SceneManager.LoadScene("Scenes/GameOver");  
         }
+        GameObject.FindGameObjectWithTag("ScoreBar").GetComponent<Slider>().value = ScoreScript.scoreValue;
+        GameObject.FindGameObjectWithTag("LifeBar").GetComponent<Slider>().value = ScoreScript.lives;
     }
 }
 

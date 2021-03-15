@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     public bool autoChangeColor;
     public bool isInvincible = false;
 
-
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
@@ -136,5 +135,7 @@ public class PlayerController : MonoBehaviour
             isInvincible = true;
              timeSpentInvincible = 0f;
              ScoreScript.lives -= 1;
+            
+            
     }
 }
