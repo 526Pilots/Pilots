@@ -141,6 +141,11 @@ public class Boss2Controller : MonoBehaviour
     void GameOver(){
         ScoreScript.lives = 3;
         ScoreScript.scoreValue = 0;
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
+        sceneManager.lastSceneName = currentSceneName;
+        sceneManager.lastSceneIndex = currentScene.buildIndex;
+       
         SceneManager.LoadScene("Scenes/GameOver");
     }
 

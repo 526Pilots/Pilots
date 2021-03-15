@@ -40,8 +40,11 @@ public class DestroyByContact : MonoBehaviour
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
                 Destroy(gameObject);   
-                ScoreScript.lives = 3;
-                ScoreScript.scoreValue = 0;
+                var currentScene = SceneManager.GetActiveScene();
+                var currentSceneName = currentScene.name;
+                sceneManager.lastSceneName = currentSceneName;
+                sceneManager.lastSceneIndex = currentScene.buildIndex;
+
                 SceneManager.LoadScene("Scenes/GameOver");                
             }
             else{
@@ -54,6 +57,13 @@ public class DestroyByContact : MonoBehaviour
                 TargetEnemyColorIndictor.color == 3 && rb.tag == "EnemyY") {
                 ScoreScript.scoreValue += 1;
                 if (ScoreScript.scoreValue >= 5) {
+                    var currentScene = SceneManager.GetActiveScene();
+                    var currentSceneName = currentScene.name;
+                    AnalyticsEvent.Custom("time for "+ currentSceneName + " to meet boss", new Dictionary<string, object>
+                    {
+                        {"time for " + currentSceneName + " to meet boss", Time.timeSinceLevelLoad }
+                    });
+
                     Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
                 }
             } else if (ScoreScript.scoreValue > 0) {

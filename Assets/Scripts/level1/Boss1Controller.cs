@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class Boss1Controller : MonoBehaviour
@@ -132,13 +132,27 @@ public class Boss1Controller : MonoBehaviour
 
     void SwitchToNextScene ()
     {
+        ScoreScript.lives = 3;
+        ScoreScript.scoreValue = 0;
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
+        AnalyticsEvent.Custom("Win this level", new Dictionary<string, object>
+        {
+            {"time for " + currentSceneName, Time.timeSinceLevelLoad },
+            {"score for " + currentSceneName, ScoreScript.scoreValue},
+            {"number of lost health for "+currentSceneName, ScoreScript.lives}
+        });
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void GameOver(){
         ScoreScript.lives = 3;
         ScoreScript.scoreValue = 0;
-        SceneManager.LoadScene("Scenes/GameOver");
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
+        sceneManager.lastSceneName = currentSceneName;
+        sceneManager.lastSceneIndex = currentScene.buildIndex;
+        SceneManager.LoadScene("Scenes/GameOver"); 
     }
 
     void reduceHealth(int damage) {

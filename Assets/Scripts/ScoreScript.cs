@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class ScoreScript : MonoBehaviour
 {
@@ -33,6 +34,19 @@ public class ScoreScript : MonoBehaviour
         if(lives <= 0){
             lives = 3;
             scoreValue = 0;
+            
+            var currentScene = SceneManager.GetActiveScene();
+            var currentSceneName = currentScene.name;
+            sceneManager.lastSceneName = currentSceneName;
+            sceneManager.lastSceneIndex = currentScene.buildIndex;
+
+            AnalyticsEvent.Custom("Game Over", new Dictionary<string, object>
+            {
+                {"time for " + currentSceneName, Time.timeSinceLevelLoad },
+                {"score for " + currentSceneName, scoreValue},
+                {"number of lost health for "+currentSceneName, 3}
+            });
+
             SceneManager.LoadScene("Scenes/GameOver");  
         }
     }
