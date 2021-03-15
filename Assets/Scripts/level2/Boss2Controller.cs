@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 using UnityEngine.SceneManagement;
 
@@ -135,6 +136,17 @@ public class Boss2Controller : MonoBehaviour
 
     void SwitchToNextScene ()
     {
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
+        AnalyticsEvent.Custom("Win level " + currentSceneName, new Dictionary<string, object>
+        {
+            {"elapsed time", Time.timeSinceLevelLoad },
+            {"gained score", ScoreScript.scoreValue},
+            {"number of lost health", ScoreScript.MAX_LIVES - ScoreScript.lives}
+        });
+
+        ScoreScript.lives = ScoreScript.MAX_LIVES;
+        ScoreScript.scoreValue = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

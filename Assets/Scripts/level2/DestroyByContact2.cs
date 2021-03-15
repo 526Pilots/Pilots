@@ -28,6 +28,8 @@ public class DestroyByContact2 : MonoBehaviour
     //当其他碰撞器进入当前GameObject的触发器时，销毁该碰撞器对应的游戏对象，同时销毁该GameObject
     void OnTriggerEnter(Collider other)
     {
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
 		// if(other.tag == "Boundary") 
 		// {
 		// 	return;
@@ -43,6 +45,9 @@ public class DestroyByContact2 : MonoBehaviour
                 Destroy(gameObject);   
                 ScoreScript.lives = 3;
                 ScoreScript.scoreValue = 0;
+                
+                sceneManager.lastSceneName = currentSceneName;
+                sceneManager.lastSceneIndex = currentScene.buildIndex;
                 SceneManager.LoadScene("Scenes/GameOver");                
             }
             else{
@@ -56,6 +61,10 @@ public class DestroyByContact2 : MonoBehaviour
                 ScoreScript.scoreValue += 1;
                 if (ScoreScript.scoreValue == 5 && flag == 0) {
                     flag = 1;
+                    AnalyticsEvent.Custom("time for "+ currentSceneName + " to meet boss", new Dictionary<string, object>
+                    {
+                        {"time for " + currentSceneName + " to meet boss", Time.timeSinceLevelLoad }
+                    });
                     Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
                 }
             } else if (ScoreScript.scoreValue > 0) {
