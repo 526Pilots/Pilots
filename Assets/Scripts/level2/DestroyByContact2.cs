@@ -54,7 +54,7 @@ public class DestroyByContact2 : MonoBehaviour
                 TargetEnemyColorIndictor.color == 2 && rb.tag == "EnemyG" ||
                 TargetEnemyColorIndictor.color == 3 && rb.tag == "EnemyY") {
                 ScoreScript.scoreValue += 1;
-                if (ScoreScript.scoreValue >= 5 && flag == 0) {
+                if (ScoreScript.scoreValue == 5 && flag == 0) {
                     flag = 1;
                     Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
                 }
