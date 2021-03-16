@@ -36,10 +36,6 @@ public class DestroyByContact1 : MonoBehaviour
 		// }
 		if(other.tag == "Player"){
             ScoreScript.lives -= 1;
-            AnalyticsEvent.Custom("lose_heart", new Dictionary<string, object>
-            {
-                { "lose_heart", Time.timeSinceLevelLoad }
-            });
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
                 Destroy(gameObject);   

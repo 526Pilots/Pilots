@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class WordController : MonoBehaviour
 {
@@ -29,6 +30,16 @@ public class WordController : MonoBehaviour
         {
             curIndex++;
             if(curIndex >= 8) {
+                var currentScene = SceneManager.GetActiveScene();
+                var currentSceneName = currentScene.name;
+                AnalyticsEvent.Custom("Win level " + currentSceneName, new Dictionary<string, object>
+                {
+                    {"elapsed time", Time.timeSinceLevelLoad },
+                    {"gained score", ScoreScript.scoreValue},
+                    {"number of lost health", ScoreScript.MAX_LIVES - ScoreScript.lives}
+                });
+                ScoreScript.lives = ScoreScript.MAX_LIVES;
+                ScoreScript.scoreValue = 0;
                 SceneManager.LoadScene("Scenes/GameOver");
             }
         }
