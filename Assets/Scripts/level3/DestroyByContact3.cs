@@ -10,6 +10,7 @@ public class DestroyByContact3 : MonoBehaviour
     //public GameObject player;
     private Color colorplayer;
     public GameObject explosion;
+    public static char cr;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,10 @@ public class DestroyByContact3 : MonoBehaviour
 		// {
 		// 	return;
 		// }
+        cr = rb.tag.ToCharArray()[0];
+        // if (WordController.GetCurChar() == rb.tag) {
+        //     tag = true;
+        // }
 		if(other.tag == "Player"){
             ScoreScript.lives -= 1;
             AnalyticsEvent.Custom("lose_heart", new Dictionary<string, object>
@@ -53,5 +58,9 @@ public class DestroyByContact3 : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);            
         }  
+    }
+
+    public static char GetCr() {
+        return cr;
     }
 }
