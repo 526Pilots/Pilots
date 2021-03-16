@@ -7,10 +7,11 @@ using UnityEngine.Analytics;
 public class GameOver : MonoBehaviour
 {
     public void RestartGame(){
-        AnalyticsEvent.Custom("Quit at level " + sceneManager.lastSceneName, new Dictionary<string, object>{});
+        AnalyticsEvent.Custom("Restart at " + sceneManager.lastSceneName, new Dictionary<string, object>{});
         GameManager.Restart();
     }
     public void QuitGame(){
+        AnalyticsEvent.Custom("Quit at " + sceneManager.lastSceneName, new Dictionary<string, object>{});
         GameManager.Quit();
     }
 }

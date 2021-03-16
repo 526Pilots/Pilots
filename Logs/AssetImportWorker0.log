@@ -480,3 +480,107 @@ Received Import Request.
 Start importing Assets/Scripts/WordController.cs using Guid(ad4535fb7d76442b78da2d706af1fa27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '420949d4d4dd1690e781d0ba2ae76d84') in 0.001203 seconds
   Import took 0.004885 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 56.988761 seconds.
+  path: Assets/Scripts/EnemyController.cs
+  artifactKey: Guid(e1aa882c6df6749e3ad5fee21d32333f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyController.cs using Guid(e1aa882c6df6749e3ad5fee21d32333f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82c984981a7688c96112a6f24ef83981') in 0.000985 seconds
+  Import took 0.004526 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003054 seconds.
+  path: Assets/Scripts/EnemyController.cs
+  artifactKey: Guid(e1aa882c6df6749e3ad5fee21d32333f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyController.cs using Guid(e1aa882c6df6749e3ad5fee21d32333f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82c984981a7688c96112a6f24ef83981') in 0.001086 seconds
+  Import took 0.005725 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000930 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.982 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1977 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 157.2 MB.
+System memory in use after: 157.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2476.
+Total: 2.192243 ms (FindLiveObjects: 0.303002 ms CreateObjectMapping: 0.076591 ms MarkObjects: 1.797450 ms  DeleteObjects: 0.014187 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 113.674488 seconds.
+  path: Assets/Scripts/DestroyExplosion.cs
+  artifactKey: Guid(b90fd57edaad448d086663e36bdf749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/DestroyExplosion.cs using Guid(b90fd57edaad448d086663e36bdf749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc13a8fe052956c8a8ba15b49f50ee7') in 0.004156 seconds
+  Import took 0.008091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003918 seconds.
+  path: Assets/Scripts/DestroyExplosion.cs
+  artifactKey: Guid(b90fd57edaad448d086663e36bdf749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/DestroyExplosion.cs using Guid(b90fd57edaad448d086663e36bdf749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc13a8fe052956c8a8ba15b49f50ee7') in 0.001778 seconds
+  Import took 0.011836 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.824873 seconds.
+  path: Assets/Scripts/sceneManager.cs
+  artifactKey: Guid(3bda4b8087a114f07a0844f406cfa911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/sceneManager.cs using Guid(3bda4b8087a114f07a0844f406cfa911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb92f8ce7c3d0c992d3fd1759c7174a2') in 0.001255 seconds
+  Import took 0.005738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003197 seconds.
+  path: Assets/Scripts/sceneManager.cs
+  artifactKey: Guid(3bda4b8087a114f07a0844f406cfa911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/sceneManager.cs using Guid(3bda4b8087a114f07a0844f406cfa911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb92f8ce7c3d0c992d3fd1759c7174a2') in 0.002434 seconds
+  Import took 0.009192 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 66.187703 seconds.
+  path: Assets/Scripts/level1/Boss1Controller.cs
+  artifactKey: Guid(3777b878c7e6a4cf6b4f9834d02d81c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/level1/Boss1Controller.cs using Guid(3777b878c7e6a4cf6b4f9834d02d81c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e29513211dc91cffe7ed56fa53779535') in 0.001336 seconds
+  Import took 0.004947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002767 seconds.
+  path: Assets/Scripts/level1/Boss1Controller.cs
+  artifactKey: Guid(3777b878c7e6a4cf6b4f9834d02d81c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/level1/Boss1Controller.cs using Guid(3777b878c7e6a4cf6b4f9834d02d81c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e29513211dc91cffe7ed56fa53779535') in 0.001860 seconds
+  Import took 0.007222 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.064119 seconds.
+  path: Assets/Scripts/level3/DestroyByContact3.cs
+  artifactKey: Guid(8541ee473ef5945919efdaee4b6421e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/level3/DestroyByContact3.cs using Guid(8541ee473ef5945919efdaee4b6421e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0fca946e1b681b0707c260ecc9eb015') in 0.001264 seconds
+  Import took 0.004818 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001163 seconds.
+  path: Assets/Scripts/level3/DestroyByContact3.cs
+  artifactKey: Guid(8541ee473ef5945919efdaee4b6421e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/level3/DestroyByContact3.cs using Guid(8541ee473ef5945919efdaee4b6421e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0fca946e1b681b0707c260ecc9eb015') in 0.001024 seconds
+  Import took 0.004634 seconds .
+
