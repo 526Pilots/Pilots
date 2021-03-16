@@ -60,11 +60,11 @@ public class DestroyByContact2 : MonoBehaviour
                 ScoreScript.scoreValue += 1;
                 if (ScoreScript.scoreValue == 5 && flag == 0) {
                     flag = 1;
+                    Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
                     AnalyticsEvent.Custom("time for "+ currentSceneName + " to meet boss", new Dictionary<string, object>
                     {
                         {"time for " + currentSceneName + " to meet boss", Time.timeSinceLevelLoad }
                     });
-                    Instantiate(bose, new Vector3(0f, 0, 20f), transform.rotation);
                 }
             } else if (ScoreScript.scoreValue > 0) {
                 ScoreScript.scoreValue -= 1;
