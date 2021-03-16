@@ -21,7 +21,7 @@ public class WordController : MonoBehaviour
         char curChar = GetCurChar();
         if (cr != curChar)
         {
-            curIndex = curIndex > 2 ? 0 : curIndex - 2;
+            curIndex = curIndex > 2 ? curIndex - 2:0;
         }
         else
         {
