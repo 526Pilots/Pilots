@@ -876,7 +876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Trigger:
     m_IsTriggerExpanded: 1
-    m_Type: 0
+    m_Type: 1
     m_LifecycleEvent: 0
     m_ApplyRules: 0
     m_Rules:
@@ -891,7 +891,7 @@ MonoBehaviour:
     m_StandardEventType: CustomEvent
     m_Parameters:
       m_Parameters: []
-    m_Name: 
+    m_Name: Quit Button
 --- !u!1 &1909217024
 GameObject:
   m_ObjectHideFlags: 0

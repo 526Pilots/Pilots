@@ -132,16 +132,16 @@ public class Boss1Controller : MonoBehaviour
 
     void SwitchToNextScene ()
     {
-        ScoreScript.lives = 3;
-        ScoreScript.scoreValue = 0;
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;
-        AnalyticsEvent.Custom("Win this level", new Dictionary<string, object>
+        AnalyticsEvent.Custom("Win level " + currentSceneName, new Dictionary<string, object>
         {
-            {"time for " + currentSceneName, Time.timeSinceLevelLoad },
-            {"score for " + currentSceneName, ScoreScript.scoreValue},
-            {"number of lost health for "+currentSceneName, ScoreScript.lives}
+            {"elapsed time", Time.timeSinceLevelLoad },
+            {"gained score", ScoreScript.scoreValue},
+            {"number of lost health", ScoreScript.MAX_LIVES - ScoreScript.lives}
         });
+        ScoreScript.lives = ScoreScript.MAX_LIVES;
+        ScoreScript.scoreValue = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
