@@ -13,6 +13,7 @@ public class EnemySpawn3 : MonoBehaviour
     public GameObject[] enemyList;
     private GameObject spawnPerfab;
     private Vector3[] v = new Vector3[8];
+    private int flag = 0;
     // public GameObject enemy1;
     // public GameObject enemy2;
     // public GameObject enemy3;
@@ -36,6 +37,7 @@ public class EnemySpawn3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int index;
         CreatTime -= Time.deltaTime;
         if (CreatTime<=0)    //如果倒计时为0 的时候
         {  
@@ -43,7 +45,15 @@ public class EnemySpawn3 : MonoBehaviour
             CreatTime = 0f;
             timerWave += Time.deltaTime;
             //int index = Random.Range(0, 3);
-            spawnPerfab = enemyList[Random.Range(0, enemyList.Length)];
+            index = WordController.GetCurChar() - 'A';
+            if (flag == 0) {
+                spawnPerfab = enemyList[index];
+                flag = 1;
+            }
+            else {
+                spawnPerfab = enemyList[Random.Range(0, enemyList.Length)];
+            }
+            
             if(timerWave < timeWave && countPerWave != 5) {
                 timerOne += Time.deltaTime;
                 if(timerOne > timeOne && ScoreScript.lives > 0) {
@@ -55,6 +65,7 @@ public class EnemySpawn3 : MonoBehaviour
             if (timerWave >= timeWave) {
                 timerWave -= timeWave;
                 countPerWave = 0;
+                flag = 0;
             }
         }
     }
