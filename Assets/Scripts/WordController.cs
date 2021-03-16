@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class WordController : MonoBehaviour
 {
-    string[] sentences = { "TAKECARE ", "GOODLUCK ", "WLOVEYOU " };
+    string[] sentences = { "TAKECARE ", "GOODLUCK ", "ILOVEYOU " };
     int sentencesIndex;
     public static int curIndex = 0;
     public static char[] thisSentence;
@@ -41,6 +41,6 @@ public class WordController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreScript.scoreValue = curIndex;
+        curIndex = ScoreScript.scoreValue;
     }
 }

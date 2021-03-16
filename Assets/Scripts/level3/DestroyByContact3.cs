@@ -27,6 +27,8 @@ public class DestroyByContact3 : MonoBehaviour
     //当其他碰撞器进入当前GameObject的触发器时，销毁该碰撞器对应的游戏对象，同时销毁该GameObject
     void OnTriggerEnter(Collider other)
     {
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
 		if(other.tag == "Boundary") 
 		{
             Destroy(gameObject); 
@@ -38,16 +40,15 @@ public class DestroyByContact3 : MonoBehaviour
         // }
 		if(other.tag == "Player"){
             ScoreScript.lives -= 1;
-            AnalyticsEvent.Custom("lose_heart", new Dictionary<string, object>
-            {
-                { "lose_heart", Time.timeSinceLevelLoad }
-            });
+
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
                 Destroy(gameObject); 
-                ScoreScript.lives = 3;
+                ScoreScript.lives = ScoreScript.MAX_LIVES;
                 ScoreScript.scoreValue = 0;
-                SceneManager.LoadScene("Scenes/GameOver");                
+                sceneManager.lastSceneName = currentSceneName;
+                sceneManager.lastSceneIndex = currentScene.buildIndex;
+                SceneManager.LoadScene("Scenes/GameOver");               
             }
             else{
                 Destroy(gameObject); 
