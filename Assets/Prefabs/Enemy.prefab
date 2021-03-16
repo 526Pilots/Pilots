@@ -41,11 +41,11 @@ GameObject:
   - component: {fileID: 7911949910295363}
   - component: {fileID: 1212280238454358534}
   - component: {fileID: 6156311102996489697}
-  - component: {fileID: -6236410746753588575}
   - component: {fileID: 1148908562}
   - component: {fileID: 3638161134938968761}
   - component: {fileID: 1977361982}
   - component: {fileID: 1977361983}
+  - component: {fileID: 1388315020}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -135,30 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6236410746753588575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7057780690790941153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1aa882c6df6749e3ad5fee21d32333f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 5515284333779207346, guid: 80efaaf0be2744efe93f545af532e031, type: 3}
-  attackrange: 5
-  movespeed: 5
-  tilt: 4
-  boundary:
-    xMin: 0
-    xMax: 0
-    zMin: 0
-    zMax: 0
-  shot: {fileID: 6901999341952784064, guid: e84a98b9b7a0b44e0a0df7d0fc8a532a, type: 3}
-  shotSpawn: {fileID: 6797231732771875595}
-  fireRate: 3
 --- !u!64 &1148908562
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -214,4 +190,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bose: {fileID: 6524238483335395890, guid: 4be7b2c50d13d4051bf9271fc9a7b800, type: 3}
-  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894, type: 3}
+  explosion: {fileID: 3931404970008656426, guid: a5172123b1ab74bc3a7125852e890894,
+    type: 3}
+--- !u!114 &1388315020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057780690790941153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44c35317668743bba359c9937cb951b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 5515284333779207346, guid: 80efaaf0be2744efe93f545af532e031, type: 3}
+  attackrange: 5
+  movespeed: 5
+  tilt: 4
+  boundary:
+    xMin: 0
+    xMax: 0
+    zMin: 0
+    zMax: 0
+  shot: {fileID: 6901999341952784064, guid: e84a98b9b7a0b44e0a0df7d0fc8a532a, type: 3}
+  shotSpawn: {fileID: 6797231732771875595}
+  fireRate: 3
