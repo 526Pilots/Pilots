@@ -10,7 +10,7 @@ public class DestroyByContact3 : MonoBehaviour
     //public GameObject player;
     private Color colorplayer;
     public GameObject explosion;
-    public static char cr;
+    private char cr;
 
     // Start is called before the first frame update
     void Start()
@@ -43,24 +43,23 @@ public class DestroyByContact3 : MonoBehaviour
             });
             if(ScoreScript.lives <= 0){
                 Destroy(other.gameObject);
-                Destroy(gameObject);   
+                Destroy(gameObject); 
                 ScoreScript.lives = 3;
                 ScoreScript.scoreValue = 0;
                 SceneManager.LoadScene("Scenes/GameOver");                
             }
             else{
                 Destroy(gameObject); 
+                //WordController.CheckCharacter(cr);
             }     
         }
         else if(other.tag == "Bullet"){
             ScoreScript.scoreValue += 1;
+            WordController.CheckCharacter(cr);
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(other.gameObject);
             Destroy(gameObject);            
         }  
     }
 
-    public static char GetCr() {
-        return cr;
-    }
 }

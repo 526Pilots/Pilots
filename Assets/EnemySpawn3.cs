@@ -9,7 +9,7 @@ public class EnemySpawn3 : MonoBehaviour
     private float timerWave = 0f;
     private float timeWave = 10.0f;
     private int countPerWave = 0;
-    private float CreatTime = 3f;
+    private float CreatTime = 1.5f;
     public GameObject[] enemyList;
     private GameObject spawnPerfab;
     private Vector3[] v = new Vector3[8];
