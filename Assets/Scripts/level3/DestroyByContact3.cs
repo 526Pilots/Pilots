@@ -27,10 +27,11 @@ public class DestroyByContact3 : MonoBehaviour
     //当其他碰撞器进入当前GameObject的触发器时，销毁该碰撞器对应的游戏对象，同时销毁该GameObject
     void OnTriggerEnter(Collider other)
     {
-		// if(other.tag == "Boundary") 
-		// {
-		// 	return;
-		// }
+		if(other.tag == "Boundary") 
+		{
+            Destroy(gameObject); 
+			return;
+		}
         cr = rb.tag.ToCharArray()[0];
         // if (WordController.GetCurChar() == rb.tag) {
         //     tag = true;

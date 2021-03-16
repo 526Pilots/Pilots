@@ -20,14 +20,14 @@ public class EnemySpawn3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        v[0] = new Vector3(-24f, 0f, 24f);
-        v[1] = new Vector3(-24f, 0f, 0f);
-        v[2] = new Vector3(-24f, 0f, -24f);
-        v[3] = new Vector3(0f, 0f, 24f);
-        v[4] = new Vector3(0f, 0f, -24f);
-        v[5] = new Vector3(24f, 0f, 24f);
-        v[6] = new Vector3(24f, 0f, 0f);
-        v[7] = new Vector3(24f, 0f, -24f);
+        v[0] = new Vector3(-20f, 0f, 20f);
+        v[1] = new Vector3(-20f, 0f, 0f);
+        v[2] = new Vector3(-20f, 0f, -20f);
+        v[3] = new Vector3(0f, 0f, 20f);
+        v[4] = new Vector3(0f, 0f, -20f);
+        v[5] = new Vector3(20f, 0f, 20f);
+        v[6] = new Vector3(20f, 0f, 0f);
+        v[7] = new Vector3(20f, 0f, -20f);
         // enemyList = new GameObject[3];
         // enemyList[0] = enemy1;
         // enemyList[1] = enemy2;
