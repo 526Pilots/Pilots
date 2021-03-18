@@ -767,6 +767,8 @@ MonoBehaviour:
     zMin: 0
     zMax: 0
   shot: {fileID: 6901999341952784064, guid: e84a98b9b7a0b44e0a0df7d0fc8a532a, type: 3}
+  shot1: {fileID: 6259742729080957271, guid: 30aa27f0ad8ff49cbab656f6ab308ff8, type: 3}
+  shot2: {fileID: 7417122767535772415, guid: 9a9f7ac0d3108423c952ff70ae91ab6e, type: 3}
   shotSpawn: {fileID: 7290228624588165336}
   fireRate: 3
   shotNumPerWave: 5

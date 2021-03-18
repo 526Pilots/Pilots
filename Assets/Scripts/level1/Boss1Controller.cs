@@ -23,6 +23,8 @@ public class Boss1Controller : MonoBehaviour
     private Vector3 move;
 
     public GameObject shot;
+    public GameObject shot1;
+    public GameObject shot2;
     public Transform shotSpawn;
     public float fireRate;
 
@@ -40,6 +42,7 @@ public class Boss1Controller : MonoBehaviour
 
     private SpriteRenderer render;
     private Slider slider;
+    public static int shotNo;
 
 
     // Start is called before the first frame update
@@ -171,6 +174,10 @@ public class Boss1Controller : MonoBehaviour
                     status = 1;
                 }
             } else {
+                shotNo = 1;
+                Instantiate(shot, rb.position, rb.rotation);
+                Instantiate(shot1, rb.position, rb.rotation);
+                Instantiate(shot2, rb.position, rb.rotation);
                 shotNum++;
             }
             nextFire = Time.time + fireRate;
