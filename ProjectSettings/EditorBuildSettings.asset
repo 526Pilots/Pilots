@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 209bc86cbfdd941d1bf401e540c65454
   - enabled: 1
+    path: Assets/Scenes/Help.unity
+    guid: 42df879e999814d66b760fe982912189
+  - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: 1ac25081a885845b2a476ccd9a872d86
   - enabled: 1
