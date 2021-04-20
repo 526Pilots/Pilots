@@ -10,14 +10,14 @@ public class Boundary
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public static float speed = 8;
     public float tilt;
     public Boundary boundary;
     public Rigidbody rb;
 
     public GameObject shot;
     public Transform shotSpawn;
-    public float fireRate;
+    public static float fireRate = 0.5f;
 
     private float nextFire;
     private float timerColor = 0f;
@@ -116,12 +116,11 @@ public class PlayerController : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
         if (other.tag == "Buff") {
-            fireRate = 0.2f;
+            MallWorker.AddPlayerFireRate();
             Destroy(other.gameObject);
             
         } else if (other.tag == "Boundary") {
             restart();
-           
 
         }
 	}
