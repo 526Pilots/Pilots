@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Boundary
@@ -10,6 +11,8 @@ public class Boundary
 
 public class PlayerController : MonoBehaviour
 {
+    public int coinValues = Global.coinValues;
+    Text coins;
     public static float speed = 8;
     public float tilt;
     public Boundary boundary;
@@ -39,39 +42,42 @@ public class PlayerController : MonoBehaviour
         }
 
         isTnvincible();
-        
+
         m_timer += Time.deltaTime;
-            if (m_timer >= 3)
-            {
-                this.GetComponent<MeshCollider>().enabled = true; 
-                this.GetComponent<CapsuleCollider>().enabled = true; 
-                m_timer = 0;
-            }
+        if (m_timer >= 3)
+        {
+            this.GetComponent<MeshCollider>().enabled = true;
+            this.GetComponent<CapsuleCollider>().enabled = true;
+            m_timer = 0;
+        }
 
 
-        
-                   
+
+
     }
 
-    void isTnvincible () {
+    void isTnvincible()
+    {
         if (isInvincible)
-		{
-			//2
-			timeSpentInvincible += Time.deltaTime;
-            this.GetComponent<MeshCollider>().enabled = false; 
-            this.GetComponent<CapsuleCollider>().enabled = false; 
-			//3
-			if (timeSpentInvincible < 3f) {
-				float remainder = timeSpentInvincible % 0.3f;
-				GetComponent<Renderer>().enabled = remainder > 0.15f; 
-			}
-			//4
-			else {
-				GetComponent<Renderer>().enabled = true;
-				isInvincible = false;
-			}
-		}
-        
+        {
+            //2
+            timeSpentInvincible += Time.deltaTime;
+            this.GetComponent<MeshCollider>().enabled = false;
+            this.GetComponent<CapsuleCollider>().enabled = false;
+            //3
+            if (timeSpentInvincible < 3f)
+            {
+                float remainder = timeSpentInvincible % 0.3f;
+                GetComponent<Renderer>().enabled = remainder > 0.15f;
+            }
+            //4
+            else
+            {
+                GetComponent<Renderer>().enabled = true;
+                isInvincible = false;
+            }
+        }
+
     }
 
     void Start()
@@ -80,17 +86,19 @@ public class PlayerController : MonoBehaviour
         randomcolor[0] = Color.red;
         randomcolor[1] = Color.green;
         randomcolor[2] = Color.yellow;
+        GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>().text = Global.coinValues.ToString();
     }
 
     void FixedUpdate()
     {
         timerColor -= Time.deltaTime;
-        if (timerColor <= 0 && autoChangeColor) {
-            
+        if (timerColor <= 0 && autoChangeColor)
+        {
+
             rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
             timerColor = 2f;
         }
-        
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -99,42 +107,55 @@ public class PlayerController : MonoBehaviour
 
         Vector3 mousePo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.LookAt(new Vector3(mousePo.x, 0, mousePo.z));
-        transform.Rotate(90,0,0);
-		
-		 Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-		        rb.velocity = movement * speed;
-		
-		        rb.position = new Vector3
-		        (
-		        Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
-		        0.0f,
-		        Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
-		        );
+        transform.Rotate(90, 0, 0);
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rb.velocity = movement * speed;
+
+        rb.position = new Vector3
+        (
+        Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+        0.0f,
+        Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
+        );
 
     }
-	
-	void OnTriggerEnter(Collider other)
-	{
-        if (other.tag == "Buff") {
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Buff")
+        {
             MallWorker.AddPlayerFireRate();
             Destroy(other.gameObject);
-            
-        } else if (other.tag == "Boundary") {
+
+        }
+        else if (other.tag == "Boundary")
+        {
             restart();
 
         }
-	}
+        else if (other.tag == "coin")
+        {
+            coinValues++;
+            coins = GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>();
+            coins.text = coinValues.ToString();
+            Global.coinValues = coinValues;
+            Destroy(other.gameObject);
 
-    public void restart() {
-            Vector3 player_position = this.transform.position;
-            player_position.x = 0;
-            player_position.y = 0;
-            player_position.z = 0;
-            this.GetComponent<Transform>().position = player_position;
-            isInvincible = true;
-             timeSpentInvincible = 0f;
-             ScoreScript.lives -= 1;
-            
-            
+        }
+    }
+
+    public void restart()
+    {
+        Vector3 player_position = this.transform.position;
+        player_position.x = 0;
+        player_position.y = 0;
+        player_position.z = 0;
+        this.GetComponent<Transform>().position = player_position;
+        isInvincible = true;
+        timeSpentInvincible = 0f;
+        ScoreScript.lives -= 1;
+
+
     }
 }

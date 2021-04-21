@@ -46,6 +46,8 @@ TagManager:
   - X
   - Y
   - Z
+  - coinValues
+  - coin
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class CoinController : MonoBehaviour
 {
     private Rigidbody rb;
 	private float timer = 0f;
-    private float time = 8.0f;
+    private float time = 8f;
     // Start is called before the first frame update
     void Start()
     {
