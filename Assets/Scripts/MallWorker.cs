@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MallWorker : MonoBehaviour
 {
+    public static int fireRateUpgrateLeftTimes = 5;
+    public static int moveSpeedUpgrateLeftTimes = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +18,32 @@ public class MallWorker : MonoBehaviour
         
     }
 
-    public static void AddPlayerFireRate()
+    public static bool AddPlayerFireRate()
     {
+        if (fireRateUpgrateLeftTimes <= 0) {
+            return false;
+        }   
         PlayerController.fireRate = (float)(PlayerController.fireRate*0.5);
+        fireRateUpgrateLeftTimes--;
+        return true;
     }
 
-    public static void AddPlayerMoveSpeed()
+    public static bool AddPlayerMoveSpeed()
     {
+        if (moveSpeedUpgrateLeftTimes <= 0) {
+            return false;
+        }
         PlayerController.speed += 10;
+        moveSpeedUpgrateLeftTimes--;
+        return true;
     }
 
-    public static void AddPlayerLife()
+    public static bool AddPlayerLife()
     {
+        if (ScoreScript.lives >= ScoreScript.MAX_LIVES) {
+            return false;
+        }
         ScoreScript.lives++;
+        return true;
     }
 }
