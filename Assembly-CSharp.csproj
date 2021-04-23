@@ -80,7 +80,6 @@
      <Compile Include="Assets\Scripts\TargetEnemyColorIndictor.cs" />
      <Compile Include="Assets\Scripts\DestroyByContact.cs" />
      <Compile Include="Assets\Scripts\blood.cs" />
-     <Compile Include="Assets\Scripts\MessageBoxUI.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\CoinSpawn.cs" />
      <Compile Include="Assets\Scripts\EBulletDestroyByContact.cs" />
