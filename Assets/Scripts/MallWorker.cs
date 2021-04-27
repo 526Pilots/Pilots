@@ -6,6 +6,9 @@ public class MallWorker : MonoBehaviour
 {
     public static int fireRateUpgrateLeftTimes = 5;
     public static int moveSpeedUpgrateLeftTimes = 5;
+    // private bool isInvincible = false;
+    // private float timeSpentInvincible = 0f;
+    // private float m_timer = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,13 @@ public class MallWorker : MonoBehaviour
             return false;
         }
         ScoreScript.lives++;
+        return true;
+    }
+    public static bool Invulnerable()
+    {
+        PlayerController.isBuyInvunerable = true;
+        PlayerController.isInvincibleBuy = true;
+        PlayerController.timeSpentInvincibleBuy = 0f;
         return true;
     }
 }

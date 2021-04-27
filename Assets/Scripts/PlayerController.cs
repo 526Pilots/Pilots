@@ -25,13 +25,17 @@ public class PlayerController : MonoBehaviour
     private float nextFire;
     private float timerColor = 0f;
     private float timeSpentInvincible = 0f;
-    private float m_timer = 0f;
+    // private float m_timer = 0f;
+    public static float timeSpentInvincibleBuy = 0f;
 
     private Color[] randomcolor = new Color[3];
 
     public int playerColor;
     public bool autoChangeColor;
     public bool isInvincible = false;
+    public static bool isInvincibleBuy = false;
+
+    public static bool isBuyInvunerable = false;
 
     void Update()
     {
@@ -40,18 +44,22 @@ public class PlayerController : MonoBehaviour
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         }
-
-        isTnvincible();
-
-        m_timer += Time.deltaTime;
-        if (m_timer >= 3)
+        if (isBuyInvunerable == false)
         {
-            this.GetComponent<MeshCollider>().enabled = true;
-            this.GetComponent<CapsuleCollider>().enabled = true;
-            m_timer = 0;
+            isTnvincible();
+
+            // m_timer += Time.deltaTime;
+            // if (m_timer >= 3)
+            // {
+            //     this.GetComponent<MeshCollider>().enabled = true;
+            //     this.GetComponent<CapsuleCollider>().enabled = true;
+            //     m_timer = 0;
+            // }
         }
-
-
+        else
+        {
+            isTnvincibleBuy();
+        }
 
 
     }
@@ -74,7 +82,36 @@ public class PlayerController : MonoBehaviour
             else
             {
                 GetComponent<Renderer>().enabled = true;
+                this.GetComponent<MeshCollider>().enabled = true;
+                this.GetComponent<CapsuleCollider>().enabled = true;
                 isInvincible = false;
+            }
+        }
+
+    }
+
+    void isTnvincibleBuy()
+    {
+        if (isInvincibleBuy)
+        {
+            //2
+            timeSpentInvincibleBuy += Time.deltaTime;
+            this.GetComponent<MeshCollider>().enabled = false;
+            this.GetComponent<CapsuleCollider>().enabled = false;
+            //3
+            if (timeSpentInvincibleBuy < 5f)
+            {
+                float remainderBuy = timeSpentInvincibleBuy % 0.3f;
+                GetComponent<Renderer>().enabled = remainderBuy > 0.15f;
+            }
+            //4
+            else
+            {
+                GetComponent<Renderer>().enabled = true;
+                this.GetComponent<MeshCollider>().enabled = true;
+                this.GetComponent<CapsuleCollider>().enabled = true;
+                isInvincibleBuy = false;
+                isBuyInvunerable = false;
             }
         }
 

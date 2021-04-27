@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
     public static int HEALTH_PRICE = 3;
     public static int ATTACK_SPEED_PRICE = 3;
     public static int MOVE_SPEED_PRICE = 3;
+    public static int INVULNERABLE_PRICE = 3;
 
     void Start()
     {   
@@ -67,6 +68,26 @@ public class Shop : MonoBehaviour
         } else {
             UnityEditor.EditorUtility.DisplayDialog("Failed", "Your attack speed has achieved the max.", "OK");
         }
+    }
+
+    public void BuyInvulnerable()
+    {  
+        // MallWorker.AddPlayerFireRate();
+        if (Global.coinValues < INVULNERABLE_PRICE) {
+            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            return;
+        }
+        // if (MallWorker.Invulnerable()) {
+        //     Global.coinValues -= INVULNERABLE_PRICE;
+        //     UpdateCoinValue();
+        //     UnityEditor.EditorUtility.DisplayDialog("Success", "You are invulnerable now.", "OK");
+        // } else {
+        //     UnityEditor.EditorUtility.DisplayDialog("Failed", "You has been invulnerable.", "OK");
+        // }
+        MallWorker.Invulnerable();
+        Global.coinValues -= INVULNERABLE_PRICE;
+        UpdateCoinValue();
+        UnityEditor.EditorUtility.DisplayDialog("Success", "You are invulnerable for 5 seconds now.", "OK");
     }
 
     public void backToMain() {
