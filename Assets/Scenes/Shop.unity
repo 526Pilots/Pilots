@@ -3203,7 +3203,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1346786454}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: backToMain
+        m_MethodName: back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

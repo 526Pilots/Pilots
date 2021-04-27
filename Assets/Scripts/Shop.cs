@@ -90,8 +90,8 @@ public class Shop : MonoBehaviour
         UnityEditor.EditorUtility.DisplayDialog("Success", "You are invulnerable for 5 seconds now.", "OK");
     }
 
-    public void backToMain() {
-        SceneManager.LoadScene(0);
+    public void back() {
+        SceneManager.LoadScene(sceneManager.lastSceneIndex);
     }
 }
 

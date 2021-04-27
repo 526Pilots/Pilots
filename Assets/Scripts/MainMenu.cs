@@ -12,6 +12,15 @@ public class MainMenu : MonoBehaviour
         GameManager.Quit();
     }
     public void goToHelp() {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Scenes/Help");
+    }
+
+    public void goToShop()
+    {  
+        var currentScene = SceneManager.GetActiveScene();
+        var currentSceneName = currentScene.name;
+        sceneManager.lastSceneName = currentSceneName;
+        sceneManager.lastSceneIndex = currentScene.buildIndex;
+        SceneManager.LoadScene("Scenes/Shop");
     }
 }
