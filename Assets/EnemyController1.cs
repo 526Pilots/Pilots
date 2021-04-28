@@ -8,7 +8,7 @@ public class EnemyController1 : MonoBehaviour
 	public GameObject player;
     private Transform playerTran;
     public float attackrange;
-    public float movespeed;
+    public static float movespeed = 5;
     //private float CreatTime = 15f;
 
     public float tilt;
@@ -80,13 +80,28 @@ public class EnemyController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        checkSpeedStatus();
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, rb.position, rb.rotation);
         }
+        rb.velocity = rb.velocity.normalized * movespeed;
     }
 
+    void checkSpeedStatus()
+    {
+        if (MallWorker.enemySpecialSpeedTimeLeft <= 0f)
+        {
+            movespeed = MallWorker.enemyNormalMoveSpeed;
+            MallWorker.enemySpecialSpeedTimeLeft = 0f;
+        }
+        else
+        {
+            MallWorker.enemySpecialSpeedTimeLeft -= Time.deltaTime;
+        }
+
+    }
     void FixedUpdate()
     {
         
