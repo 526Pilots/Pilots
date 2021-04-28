@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     // private float m_timer = 0f;
     public static float timeSpentInvincibleBuy = 0f;
 
-    private Color[] randomcolor = new Color[3];
+    // private Color[] randomcolor = new Color[3];
 
     public int playerColor;
     public bool autoChangeColor;
@@ -50,9 +50,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        randomcolor[0] = Color.red;
-        randomcolor[1] = Color.green;
-        randomcolor[2] = Color.yellow;
+        // randomcolor[0] = Color.red;
+        // randomcolor[1] = Color.green;
+        // randomcolor[2] = Color.yellow;
         GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>().text = Global.coinValues.ToString();
         
         MeshFilter meshFilter = GetComponent<MeshFilter>();
@@ -146,7 +146,16 @@ public class PlayerController : MonoBehaviour
         if (timerColor <= 0 && autoChangeColor)
         {
 
-            rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
+            // rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
+            if (TargetEnemyColorIndictor.color == 1) {
+                GetComponent<MeshRenderer>().materials = red;
+            } else if (TargetEnemyColorIndictor.color == 2) {
+                GetComponent<MeshRenderer>().materials = green;
+            } else if (TargetEnemyColorIndictor.color == 3) {
+                GetComponent<MeshRenderer>().materials = yellow;
+            } else {
+                GetComponent<MeshRenderer>().materials = normal;
+            }
             timerColor = 2f;
         }
 

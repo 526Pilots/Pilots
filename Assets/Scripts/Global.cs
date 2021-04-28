@@ -5,7 +5,7 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
     public static int coinValues;
-    public static int playerModel = 0;
+    public static int playerModel = 2;
     void Start()
     {
 
