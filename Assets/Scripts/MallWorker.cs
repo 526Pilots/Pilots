@@ -6,6 +6,7 @@ public class MallWorker : MonoBehaviour
 {
     public static int fireRateUpgrateLeftTimes = 5;
     public static int moveSpeedUpgrateLeftTimes = 5;
+    public static float enemySpecialSpeedTimeLeft = 0f;
     // private bool isInvincible = false;
     // private float timeSpentInvincible = 0f;
     // private float m_timer = 0f;

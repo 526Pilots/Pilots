@@ -37,6 +37,29 @@ public class PlayerController : MonoBehaviour
 
     public static bool isBuyInvunerable = false;
 
+    // Skin/Model
+
+    public Mesh[] meshList;
+
+    // Material/Color
+    public Material[] normal;
+    public Material[] red;
+    public Material[] yellow;
+    public Material[] green;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        randomcolor[0] = Color.red;
+        randomcolor[1] = Color.green;
+        randomcolor[2] = Color.yellow;
+        GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>().text = Global.coinValues.ToString();
+        
+        MeshFilter meshFilter = GetComponent<MeshFilter>();
+        // GetComponent<MeshRenderer>().materials = mr1;
+        meshFilter.sharedMesh = meshList[Global.playerModel];
+    }
+
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
@@ -117,15 +140,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        randomcolor[0] = Color.red;
-        randomcolor[1] = Color.green;
-        randomcolor[2] = Color.yellow;
-        GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>().text = Global.coinValues.ToString();
-    }
-
     void FixedUpdate()
     {
         timerColor -= Time.deltaTime;
@@ -144,6 +158,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 mousePo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.LookAt(new Vector3(mousePo.x, 0, mousePo.z));
+        // !!!!
         transform.Rotate(90, 0, 0);
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);

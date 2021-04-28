@@ -8,7 +8,8 @@ public class EnemyController1 : MonoBehaviour
 	public GameObject player;
     private Transform playerTran;
     public float attackrange;
-    public static float movespeed = 5;
+    public static float ENEMY_NORMAL_SPEED = 5;
+    public static float movespeed = ENEMY_NORMAL_SPEED;
     //private float CreatTime = 15f;
 
     public float tilt;
@@ -93,7 +94,7 @@ public class EnemyController1 : MonoBehaviour
     {
         if (MallWorker.enemySpecialSpeedTimeLeft <= 0f)
         {
-            movespeed = MallWorker.enemyNormalMoveSpeed;
+            movespeed = ENEMY_NORMAL_SPEED;
             MallWorker.enemySpecialSpeedTimeLeft = 0f;
         }
         else
