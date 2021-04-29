@@ -107,8 +107,8 @@ GameObject:
   - component: {fileID: 2136185367793222787}
   - component: {fileID: 8552719584713146995}
   - component: {fileID: 1950041260739697177}
-  - component: {fileID: 169350573752928483}
   - component: {fileID: 3038688778663732318}
+  - component: {fileID: 1181530633145473288}
   - component: {fileID: 2005258864458775675}
   m_Layer: 0
   m_Name: EBullet
@@ -199,19 +199,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &169350573752928483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6901999341952784064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72580d77094bc4d3abc0f03e07eb8b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
 --- !u!136 &3038688778663732318
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -226,6 +213,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1181530633145473288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901999341952784064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78ab0bbae3024bd8aa14bd57b158f8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
 --- !u!114 &2005258864458775675
 MonoBehaviour:
   m_ObjectHideFlags: 0

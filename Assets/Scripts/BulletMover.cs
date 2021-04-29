@@ -8,6 +8,7 @@ public class BulletMover : MonoBehaviour {
 
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        transform.Rotate(90, 0, 0);
         rb.velocity = transform.up * speed;
 	}
 }
