@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public void PlayGame(){
-        GameManager.Play();
+        SceneManager.LoadScene("Scenes/Skin");
     }
     public void QuitGame(){
         GameManager.Quit();

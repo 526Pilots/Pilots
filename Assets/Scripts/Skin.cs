@@ -11,8 +11,9 @@ public class Skin : MonoBehaviour
     {   
     }
     
-    public void next() {
-        SceneManager.LoadScene(0);
+    public void selectModel(int modelIndex) {
+        Global.playerModel = modelIndex;
+        GameManager.Play();
     }
 }
 

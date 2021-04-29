@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Shop.unity
     guid: 13ff2fd3f80864d2c8c55bf097972335
   - enabled: 1
+    path: Assets/Scenes/Skin.unity
+    guid: 4a335e2178a0a4c8e82945164139d372
+  - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: 1ac25081a885845b2a476ccd9a872d86
   - enabled: 1
