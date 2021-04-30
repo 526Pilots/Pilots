@@ -48,6 +48,9 @@ TagManager:
   - Z
   - coinValues
   - coin
+  - iceValue
+  - shieldValue
+  - dmsValue
   layers:
   - Default
   - TransparentFX

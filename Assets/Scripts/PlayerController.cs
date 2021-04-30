@@ -54,7 +54,10 @@ public class PlayerController : MonoBehaviour
         // randomcolor[1] = Color.green;
         // randomcolor[2] = Color.yellow;
         GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>().text = Global.coinValues.ToString();
-        
+        GameObject.FindGameObjectWithTag("iceValue").GetComponent<Text>().text = MallWorker.numOfFreezeEnemyBuff.ToString();
+        GameObject.FindGameObjectWithTag("shieldValue").GetComponent<Text>().text = MallWorker.numOfInvulnerableBuff.ToString();
+        GameObject.FindGameObjectWithTag("dmsValue").GetComponent<Text>().text = MallWorker.numOfSlowDownEnemyBuff.ToString();
+
         MeshFilter meshFilter = GetComponent<MeshFilter>();
         // GetComponent<MeshRenderer>().materials = mr1;
         meshFilter.sharedMesh = meshList[Global.playerModel];
@@ -147,13 +150,20 @@ public class PlayerController : MonoBehaviour
         {
 
             // rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
-            if (TargetEnemyColorIndictor.color == 1) {
+            if (TargetEnemyColorIndictor.color == 1)
+            {
                 GetComponent<MeshRenderer>().materials = red;
-            } else if (TargetEnemyColorIndictor.color == 2) {
+            }
+            else if (TargetEnemyColorIndictor.color == 2)
+            {
                 GetComponent<MeshRenderer>().materials = green;
-            } else if (TargetEnemyColorIndictor.color == 3) {
+            }
+            else if (TargetEnemyColorIndictor.color == 3)
+            {
                 GetComponent<MeshRenderer>().materials = yellow;
-            } else {
+            }
+            else
+            {
                 GetComponent<MeshRenderer>().materials = normal;
             }
             timerColor = 2f;
