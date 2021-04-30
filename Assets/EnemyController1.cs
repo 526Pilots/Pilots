@@ -73,7 +73,7 @@ public class EnemyController1 : MonoBehaviour
 			}
 			rb.transform.eulerAngles = new Vector3 (90, 0, (y));
 			rb.velocity = V3 * movespeed;
-	    }
+	        }
         }
 		
 	}
@@ -81,7 +81,6 @@ public class EnemyController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkSpeedStatus();
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
@@ -90,19 +89,6 @@ public class EnemyController1 : MonoBehaviour
         rb.velocity = rb.velocity.normalized * movespeed;
     }
 
-    void checkSpeedStatus()
-    {
-        if (MallWorker.enemySpecialSpeedTimeLeft <= 0f)
-        {
-            movespeed = ENEMY_NORMAL_SPEED;
-            MallWorker.enemySpecialSpeedTimeLeft = 0f;
-        }
-        else
-        {
-            MallWorker.enemySpecialSpeedTimeLeft -= Time.deltaTime;
-        }
-
-    }
     void FixedUpdate()
     {
         
