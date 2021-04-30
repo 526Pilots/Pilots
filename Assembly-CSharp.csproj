@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\BuffControl.cs" />
      <Compile Include="Assets\Scripts\DestroyExplosion.cs" />
      <Compile Include="Assets\Scripts\level1\DestroyByContact1.cs" />
+     <Compile Include="Assets\Scripts\EBulletMover.cs" />
      <Compile Include="Assets\Scripts\SwitchText.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\BulletMover2.cs" />
