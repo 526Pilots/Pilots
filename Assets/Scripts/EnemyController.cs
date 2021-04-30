@@ -81,7 +81,6 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkSpeedStatus();
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
@@ -90,19 +89,6 @@ public class EnemyController : MonoBehaviour
         rb.velocity = rb.velocity.normalized * movespeed;
     }
 
-    void checkSpeedStatus()
-    {
-        if (MallWorker.enemySpecialSpeedTimeLeft <= 0f)
-        {
-            movespeed = ENEMY_NORMAL_MOVE_SPEED;
-            MallWorker.enemySpecialSpeedTimeLeft = 0f;
-        }
-        else
-        {
-            MallWorker.enemySpecialSpeedTimeLeft -= Time.deltaTime;
-        }
-
-    }
 
     void FixedUpdate()
     {

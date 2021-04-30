@@ -13,6 +13,8 @@ public class Shop : MonoBehaviour
     public static int ATTACK_SPEED_PRICE = 3;
     public static int MOVE_SPEED_PRICE = 3;
     public static int INVULNERABLE_PRICE = 3;
+    public static int FREEZE_ENEMY_PRICE = 3;
+    public static int SLOW_DOWN_ENEMY_PRICE = 3;
 
     void Start()
     {   
@@ -72,22 +74,40 @@ public class Shop : MonoBehaviour
 
     public void BuyInvulnerable()
     {  
-        // MallWorker.AddPlayerFireRate();
         if (Global.coinValues < INVULNERABLE_PRICE) {
             UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
             return;
         }
-        // if (MallWorker.Invulnerable()) {
-        //     Global.coinValues -= INVULNERABLE_PRICE;
-        //     UpdateCoinValue();
-        //     UnityEditor.EditorUtility.DisplayDialog("Success", "You are invulnerable now.", "OK");
-        // } else {
-        //     UnityEditor.EditorUtility.DisplayDialog("Failed", "You has been invulnerable.", "OK");
-        // }
-        MallWorker.Invulnerable();
+        MallWorker.numOfInvulnerableBuff++;
         Global.coinValues -= INVULNERABLE_PRICE;
         UpdateCoinValue();
-        UnityEditor.EditorUtility.DisplayDialog("Success", "You are invulnerable for 5 seconds now.", "OK");
+        UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"J\" to remain Invulnerable for 5 seconds.", "OK");
+    }
+
+    public void BuyFreezeEnemy()
+    {
+        if (Global.coinValues < FREEZE_ENEMY_PRICE)
+        {
+            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            return;
+        }
+        MallWorker.numOfFreezeEnemyBuff++;
+        Global.coinValues -= FREEZE_ENEMY_PRICE;
+        UpdateCoinValue();
+        UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"K\" to freeze enemy for 5 seconds.", "OK");
+    }
+
+    public void BuySlowDownEnemy()
+    {
+        if (Global.coinValues < SLOW_DOWN_ENEMY_PRICE)
+        {
+            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            return;
+        }
+        MallWorker.numOfSlowDownEnemyBuff++;
+        Global.coinValues -= SLOW_DOWN_ENEMY_PRICE;
+        UpdateCoinValue();
+        UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"L\" to slow down enemy for 5 seconds.", "OK");
     }
 
     public void back() {
