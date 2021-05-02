@@ -46,14 +46,12 @@ public class Boss2Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        
         rb = GetComponent<Rigidbody>();
         randomcolor[0] = Color.yellow;
         randomcolor[1] = Color.green;
         randomcolor[2] = Color.green;
 
-        renderReference = GetComponent<SpriteRenderer>();
+        // renderReference = GetComponent<SpriteRenderer>();
 
         health = MAX_HEALTH;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -163,7 +161,8 @@ public class Boss2Controller : MonoBehaviour
 
     void reduceHealth(int damage) {
         
-        if (player.GetComponent<SpriteRenderer>().material.color == rb.GetComponent<SpriteRenderer>().material.color) {
+        // if (player.GetComponent<SpriteRenderer>().material.color == rb.GetComponent<SpriteRenderer>().material.color) {
+        if (randomcolor[PlayerController.curColor] == rb.GetComponent<SpriteRenderer>().material.color) {
             health = health - damage;
         }
         else

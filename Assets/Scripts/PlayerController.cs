@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float tilt;
     public Boundary boundary;
     public Rigidbody rb;
+    public static int curColor = 1; // 1:red, 2:green, 3:yellow
 
     public GameObject shot;
     public Transform shotSpawn;
@@ -148,8 +149,8 @@ public class PlayerController : MonoBehaviour
         timerColor -= Time.deltaTime;
         if (timerColor <= 0 && autoChangeColor)
         {
-
             // rb.GetComponent<SpriteRenderer>().material.color = randomcolor[TargetEnemyColorIndictor.color - 1];
+            curColor = TargetEnemyColorIndictor.color;
             if (TargetEnemyColorIndictor.color == 1)
             {
                 GetComponent<MeshRenderer>().materials = red;
