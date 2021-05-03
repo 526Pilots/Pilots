@@ -18,6 +18,7 @@ public class Shop : MonoBehaviour
 
     void Start()
     {   
+        // Global.coinValues = 100;
         UpdateCoinValue();
     }
 

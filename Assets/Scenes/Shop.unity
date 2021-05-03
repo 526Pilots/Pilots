@@ -1595,7 +1595,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 437642319}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: BuyAttackSpeed
+        m_MethodName: BuyFreezeEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3057,7 +3057,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1242514371}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: BuyHealth
+        m_MethodName: BuySlowDownEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
