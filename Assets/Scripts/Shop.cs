@@ -12,8 +12,8 @@ public class Shop : MonoBehaviour
     public static int HEALTH_PRICE = 3;
     public static int ATTACK_SPEED_PRICE = 3;
     public static int MOVE_SPEED_PRICE = 3;
-    public static int INVULNERABLE_PRICE = 3;
-    public static int FREEZE_ENEMY_PRICE = 3;
+    public static int INVULNERABLE_PRICE = 5;
+    public static int FREEZE_ENEMY_PRICE = 5;
     public static int SLOW_DOWN_ENEMY_PRICE = 3;
 
     void Start()
