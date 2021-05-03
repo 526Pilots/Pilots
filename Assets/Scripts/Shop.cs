@@ -29,15 +29,15 @@ public class Shop : MonoBehaviour
     public void BuyHealth()
     {  
         if (Global.coinValues < HEALTH_PRICE) {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
             return;
         }
         if (MallWorker.AddPlayerLife()) {
             Global.coinValues -= HEALTH_PRICE;
             UpdateCoinValue();
-            UnityEditor.EditorUtility.DisplayDialog("Success", "Your current health is " + ScoreScript.lives.ToString(), "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Success", "Your current health is " + ScoreScript.lives.ToString(), "OK");
         } else {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Your health has achieved the max.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Your health has achieved the max.", "OK");
         }
     }
 
@@ -45,15 +45,15 @@ public class Shop : MonoBehaviour
     {  
         // MallWorker.AddPlayerMoveSpeed();
         if (Global.coinValues < MOVE_SPEED_PRICE) {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
             return;
         }
         if (MallWorker.AddPlayerMoveSpeed()) {
             Global.coinValues -= MOVE_SPEED_PRICE;
             UpdateCoinValue();
-            UnityEditor.EditorUtility.DisplayDialog("Success", "Your current move speed is " + PlayerController.speed.ToString(), "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Success", "Your current move speed is " + PlayerController.speed.ToString(), "OK");
         } else {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Your move speed has achieved the max.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Your move speed has achieved the max.", "OK");
         }
     }
 
@@ -61,54 +61,54 @@ public class Shop : MonoBehaviour
     {  
         // MallWorker.AddPlayerFireRate();
         if (Global.coinValues < ATTACK_SPEED_PRICE) {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
             return;
         }
         if (MallWorker.AddPlayerFireRate()) {
             Global.coinValues -= ATTACK_SPEED_PRICE;
             UpdateCoinValue();
-            UnityEditor.EditorUtility.DisplayDialog("Success", "Your current attack speed is " + PlayerController.fireRate.ToString(), "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Success", "Your current attack speed is " + PlayerController.fireRate.ToString(), "OK");
         } else {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Your attack speed has achieved the max.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Your attack speed has achieved the max.", "OK");
         }
     }
 
     public void BuyInvulnerable()
     {  
         if (Global.coinValues < INVULNERABLE_PRICE) {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
             return;
         }
         MallWorker.numOfInvulnerableBuff++;
         Global.coinValues -= INVULNERABLE_PRICE;
         UpdateCoinValue();
-        UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"J\" to remain Invulnerable for 5 seconds.", "OK");
+        // UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"J\" to remain Invulnerable for 5 seconds.", "OK");
     }
 
     public void BuyFreezeEnemy()
     {
         if (Global.coinValues < FREEZE_ENEMY_PRICE)
         {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
             return;
         }
         MallWorker.numOfFreezeEnemyBuff++;
         Global.coinValues -= FREEZE_ENEMY_PRICE;
         UpdateCoinValue();
-        UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"K\" to freeze enemy for 5 seconds.", "OK");
+        // UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"K\" to freeze enemy for 5 seconds.", "OK");
     }
 
     public void BuySlowDownEnemy()
     {
         if (Global.coinValues < SLOW_DOWN_ENEMY_PRICE)
         {
-            UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
+            // UnityEditor.EditorUtility.DisplayDialog("Failed", "Coin is not enough.", "OK");
             return;
         }
         MallWorker.numOfSlowDownEnemyBuff++;
         Global.coinValues -= SLOW_DOWN_ENEMY_PRICE;
         UpdateCoinValue();
-        UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"L\" to slow down enemy for 5 seconds.", "OK");
+        // UnityEditor.EditorUtility.DisplayDialog("Success", "You could press button \"L\" to slow down enemy for 5 seconds.", "OK");
     }
 
     public void back() {
