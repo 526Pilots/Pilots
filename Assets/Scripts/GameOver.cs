@@ -14,4 +14,7 @@ public class GameOver : MonoBehaviour
         AnalyticsEvent.Custom("Quit at " + sceneManager.lastSceneName, new Dictionary<string, object>{});
         GameManager.Quit();
     }
+    public void ReturnToMenu() {
+        GameManager.ReturnToMenu();
+    }
 }

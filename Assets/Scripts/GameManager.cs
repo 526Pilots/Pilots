@@ -21,4 +21,7 @@ public class GameManager : MonoBehaviour
     public static void Quit(){
         Application.Quit();
     }
+    public static void ReturnToMenu() {
+        SceneManager.LoadScene(0);
+    }
 }
