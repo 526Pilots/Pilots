@@ -40,7 +40,7 @@ public class WordController : MonoBehaviour
                 });
                 ScoreScript.lives = ScoreScript.MAX_LIVES;
                 ScoreScript.scoreValue = 0;
-                SceneManager.LoadScene("Scenes/GameOver");
+                SceneManager.LoadScene("Scenes/PASS");
             }
         }
     }
