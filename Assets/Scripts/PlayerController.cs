@@ -11,7 +11,7 @@ public class Boundary
 
 public class PlayerController : MonoBehaviour
 {
-    public int coinValues = Global.coinValues;
+    // public int coinValues = Global.coinValues;
     Text coins;
     public static float speed = 8;
     public float tilt;
@@ -227,10 +227,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.tag == "coin")
         {
-            coinValues++;
+            Global.coinValues++;
             coins = GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>();
-            coins.text = coinValues.ToString();
-            Global.coinValues = coinValues;
+            coins.text = Global.coinValues.ToString();
             Destroy(other.gameObject);
 
         }
