@@ -55,16 +55,19 @@ public class PlayerController : MonoBehaviour
         // randomcolor[1] = Color.green;
         // randomcolor[2] = Color.yellow;
         GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>().text = Global.coinValues.ToString();
-       
+
 
         MeshFilter meshFilter = GetComponent<MeshFilter>();
         // GetComponent<MeshRenderer>().materials = mr1;
         meshFilter.sharedMesh = meshList[Global.playerModel];
+
+        TargetEnemyColorIndictor.color = 0;
+
     }
 
     void Update()
     {
-         GameObject.FindGameObjectWithTag("iceValue").GetComponent<Text>().text = MallWorker.numOfFreezeEnemyBuff.ToString();
+        GameObject.FindGameObjectWithTag("iceValue").GetComponent<Text>().text = MallWorker.numOfFreezeEnemyBuff.ToString();
         GameObject.FindGameObjectWithTag("shieldValue").GetComponent<Text>().text = MallWorker.numOfInvulnerableBuff.ToString();
         GameObject.FindGameObjectWithTag("dmsValue").GetComponent<Text>().text = MallWorker.numOfSlowDownEnemyBuff.ToString();
         if (Input.GetButton("Fire1") && Time.time > nextFire)
@@ -168,7 +171,7 @@ public class PlayerController : MonoBehaviour
             {
                 GetComponent<MeshRenderer>().materials = normal;
             }
-            timerColor = 2f;
+            timerColor = 3f;
         }
 
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -195,6 +198,21 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Red")
+        {
+            GetComponent<MeshRenderer>().materials = red;
+            TargetEnemyColorIndictor.color = 1;
+        }
+        else if (other.tag == "Yellow")
+        {
+            GetComponent<MeshRenderer>().materials = yellow;
+            TargetEnemyColorIndictor.color = 3;
+        }
+        else if (other.tag == "Green")
+        {
+            GetComponent<MeshRenderer>().materials = green;
+            TargetEnemyColorIndictor.color = 2;
+        }
         if (other.tag == "Buff")
         {
             MallWorker.AddPlayerFireRate();
