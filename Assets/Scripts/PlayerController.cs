@@ -55,9 +55,7 @@ public class PlayerController : MonoBehaviour
         // randomcolor[1] = Color.green;
         // randomcolor[2] = Color.yellow;
         GameObject.FindGameObjectWithTag("coinValues").GetComponent<Text>().text = Global.coinValues.ToString();
-        GameObject.FindGameObjectWithTag("iceValue").GetComponent<Text>().text = MallWorker.numOfFreezeEnemyBuff.ToString();
-        GameObject.FindGameObjectWithTag("shieldValue").GetComponent<Text>().text = MallWorker.numOfInvulnerableBuff.ToString();
-        GameObject.FindGameObjectWithTag("dmsValue").GetComponent<Text>().text = MallWorker.numOfSlowDownEnemyBuff.ToString();
+       
 
         MeshFilter meshFilter = GetComponent<MeshFilter>();
         // GetComponent<MeshRenderer>().materials = mr1;
@@ -66,6 +64,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+         GameObject.FindGameObjectWithTag("iceValue").GetComponent<Text>().text = MallWorker.numOfFreezeEnemyBuff.ToString();
+        GameObject.FindGameObjectWithTag("shieldValue").GetComponent<Text>().text = MallWorker.numOfInvulnerableBuff.ToString();
+        GameObject.FindGameObjectWithTag("dmsValue").GetComponent<Text>().text = MallWorker.numOfSlowDownEnemyBuff.ToString();
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
