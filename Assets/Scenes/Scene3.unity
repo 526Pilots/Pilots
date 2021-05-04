@@ -535,8 +535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 320.94, y: 73.824}
-  m_SizeDelta: {x: -641.8771, y: -300.5072}
+  m_AnchoredPosition: {x: 637.1061, y: 7.403015}
+  m_SizeDelta: {x: -1407.795, y: -637.6322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &69363376
 GameObject:
@@ -1050,7 +1050,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -2826,8 +2826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 314.4, y: 154.8}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 500, y: 148}
+  m_SizeDelta: {x: 44.0016, y: 50.004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449164212
 MonoBehaviour:
@@ -3502,7 +3502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9716981, g: 0.93044674, b: 0.93044674, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5402,8 +5402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243.6, y: 154.8}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 428.19974, y: 147.99812}
+  m_SizeDelta: {x: 46.0023, y: 50.0038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200112686
 MonoBehaviour:
@@ -5759,8 +5759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00036669, y: 0.00020027}
-  m_SizeDelta: {x: 183.62, y: 106.99}
+  m_AnchoredPosition: {x: 2.9998, y: -4.0015}
+  m_SizeDelta: {x: 273.8156, y: 177.1502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226069251
 MonoBehaviour:
@@ -5795,7 +5795,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Just Shoot!
+  m_Text: Justing shooting will result in penalty points! Cross the colored cubes
+    to chaneg your color! and shoot the enemy of the same color!
 --- !u!222 &1226069252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6575,8 +6576,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13, y: 0}
-  m_SizeDelta: {x: -372.2366, y: -152.8589}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -1320.5977, y: -603.0303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1355482858
 GameObject:
@@ -7542,7 +7543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.990566, g: 0.9485137, b: 0.9485137, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7927,7 +7928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9433962, g: 0.91224635, b: 0.91224635, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9062,7 +9063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9716981, g: 0.91211283, b: 0.91211283, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
