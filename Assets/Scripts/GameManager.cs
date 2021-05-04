@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
     public static void ReturnToMenu() {
+        ScoreScript.lives = ScoreScript.MAX_LIVES;
+        ScoreScript.scoreValue = 0;
         SceneManager.LoadScene(0);
     }
 }
