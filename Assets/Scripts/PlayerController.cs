@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
         meshFilter.sharedMesh = meshList[Global.playerModel];
 
         TargetEnemyColorIndictor.color = 0;
+        curColor = 0;
 
     }
 
@@ -201,17 +202,17 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Red")
         {
             GetComponent<MeshRenderer>().materials = red;
-            TargetEnemyColorIndictor.color = 1;
+            curColor = 1;
         }
         else if (other.tag == "Yellow")
         {
             GetComponent<MeshRenderer>().materials = yellow;
-            TargetEnemyColorIndictor.color = 3;
+            curColor = 3;
         }
         else if (other.tag == "Green")
         {
             GetComponent<MeshRenderer>().materials = green;
-            TargetEnemyColorIndictor.color = 2;
+            curColor = 2;
         }
         if (other.tag == "Buff")
         {

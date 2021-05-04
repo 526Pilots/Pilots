@@ -54,9 +54,9 @@ public class DestroyByContact2 : MonoBehaviour
             }     
         }
         else if(other.tag == "Bullet"){
-            if (TargetEnemyColorIndictor.color == 1 && rb.tag == "EnemyR" ||
-                TargetEnemyColorIndictor.color == 2 && rb.tag == "EnemyG" ||
-                TargetEnemyColorIndictor.color == 3 && rb.tag == "EnemyY") {
+            if (PlayerController.curColor == 1 && rb.tag == "EnemyR" ||
+                PlayerController.curColor == 2 && rb.tag == "EnemyG" ||
+                PlayerController.curColor == 3 && rb.tag == "EnemyY") {
                 ScoreScript.scoreValue += 1;
                 if (ScoreScript.scoreValue == 5 && flag == 0) {
                     flag = 1;
